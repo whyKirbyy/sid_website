@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Politician Profile Dashboard</title>
+  <link rel="stylesheet" href=style.css>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans leading-normal text-gray-900">
+    <!-- Sidebar DIV-->
+    <div class="container mx-auto p-4 flex flex-col">
+      <!-- Sidebar -->
+      <div id="sidebar" class="sidebar">
+        <!-- Hamburger Icon -->
+        <div class="hamburger" onclick="toggleSidebar()">
+          &#9776;
+        </div>
+        <!-- Menu -->
+        <ul class="sidebar-menu">
+          <li><a href="sidebar/profile.html">Profile</a></li>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="sidebar/about.html">About</a></li>
+          <li><a href="sidebar/services.html">Services</a></li>
+          <li><a href="sidebar/contact.html">Contact</a></li>
+          </ul>
+      </div>
+    </div>
+    <!-- Main Content DIV -->
+    <div id="page-container">
+        <div class="container mx-auto max-w-5xl px-4">
+            <div class="flex flex-row gap-4 w-full">
+              <!-- Main Text Content -->
+                <div class="flex-1 bg-white rounded-lg shadow-lg p-6 card-height-adjusted-personal">
+                    <div class="flex items-center justify-between mb-8">
+                    <!-- Name Title -->
+                        <h2 class="text-2xl font-bold">Name Name</h2>
+                        <!-- Home Button -->
+                        <button onclick="window.location.href='pd_main.html';" class="bg-red-500 text-white hover:text-gray-300 font-bold py-1 px-2 rounded">
+                            Main
+                        </button>
+                    </div>
+                    <div id="voting_behavior">
+                        <h3 class="text-xl font-bold mb-4">
+                            Voting Results
+                            <button class="toggle-section" onclick="toggleSection('voting_behavior', this)">▼</button>
+                        </h3>
+                        <div class="content">
+                            <table class="mb-2" id="elections">
+                                <thead>
+                                  <tr>
+                                    <th>Abstimmung</th>
+                                    <th>Wahl</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td><a href="pd_main.html">Election Topic 1</a></td>
+                                    <td>Yes</td>
+                                  </tr>
+                                  <tr>
+                                    <td><a href="pd_main.html">Election Topic 2</a></td>
+                                    <td>No</td>
+                                  </tr>
+                                  <tr>
+                                    <td><a href="pd_main.html">Election Topic 3</a></td>
+                                    <td>Yes</td>
+                                  </tr>
+                                  <tr>
+                                    <td><a href="pd_main.html">Election Topic 4</a></td>
+                                    <td>Yes</td>
+                                  </tr>
+                                  <tr>
+                                    <td><a href="pd_main.html">Election Topic 5</a></td>
+                                    <td>Yes</td>
+                                  </tr>
+                                  <tr>
+                                    <td><a href="pd_main.html">Election Topic 6</a></td>
+                                    <td>Yes</td>
+                                  </tr>
+                                  <!-- Add more <tr> elements for each row of data -->
+                                </tbody>
+                            </table>
+                            <div class="table-legend mb-2">
+                                <p>Yes - Voted for, No - Voted against, EH - Enhaltung, NT - Nicht Teilgenommen, P - Präsident/innen</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="parlamentary_mandates">
+                        <h3 class="text-xl font-bold mb-4">
+                            Parlamentary Mandates
+                            <button class="toggle-section" onclick="toggleSection('parlamentary_mandates', this)">▼</button>
+                        </h3>
+                        <div class="content">
+                            <table class="mb-4" id="elections">
+                                <thead>
+                                  <tr>
+                                    <th>Nationalrat</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td><a href="pd_main.html">Commitee 1</a></td>
+                                  </tr>
+                                  <tr>
+                                    <td><a href="pd_main.html">Commitee 2</a></td>
+                                  </tr>
+                                  <tr>
+                                    <td><a href="pd_main.html">Commitee 3</a></td>
+                                  </tr>
+                                  <tr>
+                                    <td><a href="pd_main.html">Commitee 1</a></td>
+                                  </tr>
+                                  <tr>
+                                    <td><a href="pd_main.html">Commitee 2</a></td>
+                                  </tr>
+                                  <tr>
+                                    <td><a href="pd_main.html">Commitee 3</a></td>
+                                  </tr>
+                                  <!-- Add more <tr> elements for each row of data -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div id="members_interests">
+                        <h3 class="text-xl font-bold mb-4">
+                            Member's Interest
+                            <button class="toggle-section" onclick="toggleSection('members_interests', this)">▼</button>
+                        </h3>
+                        <div class="content">
+                            <table class="mb-4" id="elections">
+                                <thead>
+                                  <tr>
+                                    <th>Name</th>
+                                    <th>Legal Form</th>
+                                    <th>Body</th>
+                                    <th>Function</th>
+                                    <th>TYP</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td>Company A</td>
+                                    <td>Legal Form A</td>
+                                    <td>Body A</td>
+                                    <td>Funcation A</td>
+                                    <td>Paid</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Company B</td>
+                                    <td>Legal Form B</td>
+                                    <td>Body B</td>
+                                    <td>Funcation B</td>
+                                    <td>Unpaid</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Company C</td>
+                                    <td>Legal Form C</td>
+                                    <td>Body C</td>
+                                    <td>Funcation C</td>
+                                    <td>Unpaid</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Company D</td>
+                                    <td>Legal Form D</td>
+                                    <td>Body D</td>
+                                    <td>Funcation D</td>
+                                    <td>Paid</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Company E</td>
+                                    <td>Legal Form E</td>
+                                    <td>Body E</td>
+                                    <td>Funcation E</td>
+                                    <td>Unpaid</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Company F</td>
+                                    <td>Legal Form F</td>
+                                    <td>Body F</td>
+                                    <td>Funcation F</td>
+                                    <td>Unpaid</td>
+                                  </tr>
+                                  <!-- Add more <tr> elements for each row of data -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <!-- Profile Picture and Quick Facts -->
+                <div class="w-1/4 bg-white rounded-lg shadow-lg p-4">
+                <div class="mb-4 flex flex-col items-center">
+                  <div class="h-48 w-48 bg-gray-300 rounded-full flex items-center justify-center text-2xl">
+                    100 x 100
+                  </div>
+                  <div class="mt-4 text-center mb-1">
+                    <h2 class="text-2xl font-bold">
+                      name name
+                    </h2>
+                  </div>
+                </div>
+                <!-- Quick facts can go here -->
+                <div>
+                  <h3 class="font-bold mb-2"> Content overview </h3>
+                  <ul class="content-overview">
+                    <li><a href="#voting_behavior">Voting Results</a></li>
+                    <li><a href="#parlamentary_mandates">Parlamentary Mandates</a></li>
+                    <li><a href="#members_interests">Members' Interests</a></li>
+                    <!-- More facts -->
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+  <script src=script.js></script>
+  </body>
+  </html>

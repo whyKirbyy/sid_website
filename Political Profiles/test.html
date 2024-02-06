@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Politician Profile Dashboard</title>
+  <link rel="stylesheet" href=style.css>
+  <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans leading-normal text-gray-900">
+    <div class="container mx-auto p-4 flex flex-col">
+      <!-- Sidebar -->
+      <div id="sidebar" class="sidebar">
+        <!-- Hamburger Icon -->
+        <div class="hamburger" onclick="toggleSidebar()">
+          &#9776;
+        </div>
+        <!-- Menu -->
+        <ul class="sidebar-menu">
+          <li>
+            <a href="sidebar/profile.html">
+              <i class='bx bx-user'></i>
+              <span class="links_name">Profile</span>
+            </a>
+          </li>
+          <li><a href="sidebar/home.html">Home</a></li>
+          <li><a href="sidebar/about.html">About</a></li>
+          <li><a href="sidebar/services.html">Services</a></li>
+          <li><a href="sidebar/contact.html">Contact</a></li>
+          </ul>
+      </div>
+      <div id="page-container">
+        <div id="main-content">
+          <!-- Main Content Grid -->
+          <div class="grid grid-cols-3 gap-2 mb-2">
+            <!-- Profile Picture -->
+            <div class="col-span-1 bg-white p-4 rounded-lg flex flex-col items-center">
+              <div class="h-48 w-48 bg-gray-300 rounded-full flex items-center justify-center text-2xl">
+                100 x 100
+              </div>
+              <div class="mt-4 text-center">
+                <h2 class="text-xl font-bold">
+                  <a href="pd_personal.html">Personal Details</a>
+                </h2>
+              </div>
+            </div>
+
+            <!-- Info Boxes -->
+            <div class="col-span-2 grid grid-rows-2 grid-cols-2 gap-2">
+              <!-- Voting Behavior -->
+              <div class="bg-white p-4 rounded-lg  card-height-adjusted">
+                <h3 class="font-bold text-lg mb-2">
+                    <a href="#">Voting Behavior</a>
+                </h3>
+                <!-- Content -->
+              </div>
+              <!-- Legislative Initiatives -->
+              <div class="bg-white p-4 rounded-lg card-height-adjusted">
+                <h3 class="font-bold text-lg mb-2">Legislative Initiatives</h3>
+                <!-- Content -->
+              </div>
+              <!-- Political Goals -->
+              <div class="bg-white p-4 rounded-lg card-height-adjusted">
+                <h3 class="font-bold text-lg mb-2">Political Goals</h3>
+                <!-- Content -->
+              </div>
+              <!-- Articles -->
+              <div class="bg-white p-4 rounded-lg card-height-adjusted">
+                <h3 class="font-bold text-lg mb-2">Statistics and Indecies</h3>
+                <!-- Content -->
+              </div>
+            </div>
+          </div>
+        
+          <!-- Suggested People -->
+          <div class="bg-white p-3 rounded-lg mb-2">
+            <h3 class="font-bold text-lg mb-4">Suggested People</h3>
+            <div class="flex-container">
+              <!-- Placeholder for suggested profiles -->
+              <div class="bg-gray-300 rounded-full h-24 w-24 flex items-center justify-center text-lg profile-circle">
+                Profile 1
+              </div>
+              <div class="bg-gray-300 rounded-full h-24 w-24 flex items-center justify-center text-lg profile-circle">
+                Profile 2
+              </div>
+              <div class="bg-gray-300 rounded-full h-24 w-24 flex items-center justify-center text-lg profile-circle">
+                Profile 3
+              </div>
+              <!-- Repeat for other profiles -->
+            </div>
+          </div>
+
+          <!-- Suggested Organisations -->
+          <div class="bg-white p-2 rounded-lg">
+            <h3 class="font-bold text-lg mb-4">Suggested Organisations</h3>
+            <div class="flex-container">
+              <!-- Placeholder for suggested profiles -->
+              <div class="bg-gray-300 rounded-full h-24 w-24 flex items-center justify-center text-lg profile-circle">
+                Profile 1
+              </div>
+              <div class="bg-gray-300 rounded-full h-24 w-24 flex items-center justify-center text-lg profile-circle">
+                Profile 2
+              </div>
+              <div class="bg-gray-300 rounded-full h-24 w-24 flex items-center justify-center text-lg profile-circle">
+                Profile 3
+              </div>
+              <!-- Repeat for other profiles -->
+            </div>
+          </div>
+        </div>
+    </div>
+  <script src=script.js></script>
+  </body>
+  </html>
