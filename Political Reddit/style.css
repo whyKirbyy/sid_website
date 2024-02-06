@@ -1,0 +1,297 @@
+.card-height-adjusted {
+    height: 320px; 
+}
+
+.card-height-adjusted-personal {
+    min-height: 720px; 
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+/* Individual profile circles */
+.profile-circle {
+    flex : 0 0 auto;
+    width: 100px; /* Circle width */
+    height: 100px; /* Circle height */
+    margin-left: 7px;
+    margin-bottom: 7px;
+}
+
+.home-button {
+    background-color: #ff0000; /* Example button color */
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
+    margin-left: 20px; /* Spacing between the title and the button */
+  }
+  
+
+.w14 {
+    width: 25%;
+}
+
+.sticky {
+    position: sticky;
+    top: 0;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    height: 100%;
+    width: 50px; /* Width of the collapsed sidebar */
+    position: fixed;
+    z-index: 2; /* Ensure sidebar is above the dimmed content */
+    top: 0;
+    left: 0;
+    background-color: red; /* Set the background color for the sidebar */
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: width ease, background-color ease; /* Combine transition properties */
+}
+  /* Sidebar menu styles */
+  
+.sidebar-menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+  
+.sidebar-menu li a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #ffffff;
+    display: block;
+    transition: 0.3s;
+    display: none; /* Hide text by default */
+    z-index: 2; /* Above the dimmed body */
+}
+  
+.sidebar-menu li a:hover {
+    color: #c4c4c4;
+}
+
+.sidebar.sidebar-expanded .sidebar-menu li a {
+    display: block; /* Show text when sidebar is expanded */
+}
+
+body.sidebar-expanded::before {
+    content: "";
+    position: fixed; /* Fixed position */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Dimming effect */
+    z-index: 2; /* Below the sidebar, above the content */
+    pointer-events: none; /* Allows clicks to pass through */
+}
+  
+  /* Hamburger Icon */
+.hamburger {
+    position: absolute;
+    left: 50%;
+    top: 16px; /* Adjust as necessary to position from the top */
+    transform: translateX(-50%); /* Center the element in the middle of the sidebar */
+    cursor: pointer;
+    color: #fff; /* Change the color if you want */
+    font-size: 30px;
+    z-index: 4; /* Above the dimmed body and sidebar */
+    z-index: 5; /* Ensure it's above everything else */
+    transition: top 0.5s; /* Animate the change in position */
+}
+  
+/* Adjust position when sidebar is expanded */
+.sidebar.sidebar-expanded .hamburger {
+    top: 16px; 
+    left: 17%;
+}
+
+  /* Page content */
+#main-content {
+    transition: margin-left 0.5s, background-color 0.5s; /* Add background-color transition */
+}
+  
+  /* When the sidebar is expanded, add a margin to the page content */
+#main-content.sidebar-expanded {
+    margin-left: 200px;
+}
+
+.sidebar.sidebar-expanded { /* Make sure this is as specific as the .sidebar selector */
+    width: 250px;
+    background-color: red; /* Keep the background color red for consistency */
+    z-index: 3; /* Above the dimmed body */
+}
+
+.sidebar-expanded .sidebar-menu li a {
+    display: block;
+}
+
+#page-container {
+    transition: background-color 0.5s, pointer-events 0.5s; /* Smooth transition for background color and pointer-events */
+}
+
+.sidebar .logo_name,
+.sidebar .nav-list .links_name {
+  display: none;
+}
+
+.sidebar.open .logo_name,
+.sidebar.open .nav-list .links_name {
+  display: block;
+}
+  
+.info-box:hover {
+    border: 2px solid red;
+    cursor: pointer;
+  }
+  
+  
+/* Add this to your CSS */
+.content-overview li:hover {
+    color: red;
+    cursor: pointer;
+  }
+
+.node {
+    stroke: #623a3a;
+    stroke-width: 1.5px;
+  }
+.link {
+    stroke: #999;
+    stroke-opacity: 0.6;
+}
+
+#graph-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px; /* or any other height */
+  }
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+thead {
+    background-color: #ff0000; /* Dark teal color */
+    color: white;
+  }
+  
+  th, td {
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tbody tr:nth-child(odd) {
+    background-color: #e0e0e0; /* Light grey for odd rows */
+  }
+  
+  tbody tr:nth-child(even) {
+    background-color: #ffffff; /* White for even rows */
+  }
+  
+  td {
+    border-bottom: 1px solid #dddddd; /* Light grey border for table data */
+  }
+
+#elections a:hover{
+  color: #ff0000;
+}
+
+.table-legend p {
+  font-size: 0.875rem; /* Example size, adjust as needed */
+  color: #666; /* Dark grey, adjust as needed */
+}
+
+h3 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.toggle-section {
+  /* your existing styles */
+  transition: transform 0.3s ease; /* smooth transition for rotation */
+}
+
+.toggle-section.expanded {
+  transform: rotate(-90deg); /* rotate the arrow when expanded */
+}
+
+.legend_link p {
+  font-size: 0.875rem; /* Example size, adjust as needed */
+  color: #666; /* Dark grey, adjust as needed */
+}
+
+.icon-wrapper {
+  display: inline-block;
+  position: relative; /* Needed to position the tooltip */
+  vertical-align: middle; /* Aligns icons vertically */
+}
+
+.info-icon {
+  cursor: pointer;
+  margin-left: 5px; /* Adjust as necessary */
+  /* Additional styles if necessary */
+}
+
+.tooltip-content {
+  visibility: hidden;
+  width: 210px; /* Adjust width as needed, or use 'auto' */
+  height: 110px;
+  background-color: #F9F9F9; /* Light grey background to match the site's palette */
+  color: #333; /* Dark text for contrast */
+  text-align: left;
+  padding: 6px 10px; /* Slightly less padding for content */
+  position: absolute;
+  z-index: 100; /* Make sure it's above other items */
+  bottom: 50%; /* Position it at the middle height of the icon */
+  right: 110%; /* Position it to the left of the icon */
+  transform: translateY(50%); /* Align it with the icon vertically */
+  border-radius: 6px; /* Rounded corners */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Subtle shadow for depth */
+  font-size: 0.85rem; /* Smaller font size for the tooltip text */
+  font-family: 'Arial', sans-serif; /* Replace with your desired font family */
+  font-size: 0.85rem; /* Adjust the size as needed */
+  font-weight: normal; /* Could be 'bold', 'normal', 'lighter', etc. */
+  font-style: normal; /* Could be 'italic' if you want */
+  line-height: 1.2;
+  opacity: 0;
+}
+
+.info-icon:hover .tooltip-content {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Styling for the tooltip arrow pointing to the right */
+.tooltip-content::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 100%; /* Arrow coming out of the right side */
+  margin-top: -5px; /* Center the arrow vertically */
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent transparent #F9F9F9; /* Arrow color matches tooltip background */
+}
+
+.section_stuff:hover{
+  color: #ff0000;
+}
+
+
