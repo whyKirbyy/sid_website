@@ -326,6 +326,7 @@ h3 {
   width: 100%; /* Make the image fill the container */
   height: auto; /* Maintain aspect ratio */
 }
+
 .text-overlay {
   position: absolute; /* Position text over the image */
   top: 7%; /* Adjust as needed for vertical alignment */
