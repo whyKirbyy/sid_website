@@ -316,3 +316,23 @@ h3 {
   text-align: center; /* text-center */
 }
 
+.image-text-container {
+  position: relative; /* Establishes a positioning context for absolute children */
+  text-align: center; /* Center content */
+  min-height: 50vh; /* Adjust as needed */
+}
+
+.responsive-image {
+  width: 100%; /* Make the image fill the container */
+  height: auto; /* Maintain aspect ratio */
+}
+.text-overlay {
+  position: absolute; /* Position text over the image */
+  top: 7%; /* Adjust as needed for vertical alignment */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Adjust for perfect centering */
+  color: black; /* Choose a text color that contrasts with your image */
+  font-size: 4vw; /* Use viewport width (vw) units for responsive font size */
+  font-weight: bold;
+  white-space: nowrap; /* Prevent text from wrapping */
+}
