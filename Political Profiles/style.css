@@ -325,6 +325,7 @@ h3 {
 .responsive-image {
   width: 100%; /* Make the image fill the container */
   height: auto; /* Maintain aspect ratio */
+  pointer-events: none;
 }
 
 .text-overlay {
