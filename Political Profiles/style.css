@@ -338,3 +338,28 @@ h3 {
   font-weight: bold;
   white-space: nowrap; /* Prevent text from wrapping */
 }
+.white-box-overlay {
+  position: absolute;
+  /* You need to adjust the top and left values based on the position of the white box in the image */
+  top: 84%; /* Adjust this value to position the text in the white box */
+  left: 50%; /* Adjust this value to position the text in the white box */
+  transform: translate(-50%, -50%);
+  width: 800px; /* Adjust this value based on the width of the white box */
+  height: auto; /* Adjust if you have a specific height in mind */
+}
+
+
+.white-box-overlay p {
+  font-size: 1.5em; /* Adjust the size as needed */
+  font-weight: bold; /* Makes the text bold */
+  color: black; /* Adjust the color as needed for visibility */
+}
+
+.white-box-overlay p:hover {
+  color: #ff0000;
+}
+
+.white-box-overlay h4 {
+  font-size: 0.5em; /* Adjust the size as needed */
+  color: black; /* Adjust the color as needed for visibility */
+}
