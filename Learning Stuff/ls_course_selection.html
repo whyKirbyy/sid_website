@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Politician Profile Dashboard</title>
+  <link rel="stylesheet" href=style.css>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans leading-normal text-gray-900">
+    <!-- Sidebar DIV-->
+    <div class="container mx-auto p-4 flex flex-col">
+      <!-- Sidebar -->
+      <div id="sidebar" class="sidebar">
+        <!-- Hamburger Icon -->
+        <div class="hamburger" onclick="toggleSidebar()">
+          &#9776;
+        </div>
+        <!-- Menu -->
+        <ul class="sidebar-menu">
+          <li><a href="sidebar/profile.html">Profile</a></li>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="sidebar/about.html">About</a></li>
+          <li><a href="sidebar/services.html">Services</a></li>
+          <li><a href="sidebar/contact.html">Contact</a></li>
+          </ul>
+      </div>
+    </div>
+    <!-- Main Content DIV -->
+    <div id="page-container" class="ml-10">
+        <!-- Heading of page -->
+        <div class="page-heading">
+            <p>Course Catalouge in Subject:</p>
+        </div>
+        <!-- Serachbar DIV -->
+        <div class=" mx-auto sm:px-6 mb-4">
+            <div class="flex items-center mb-4">
+                <input type="text" class="rounded-full p-2 focus:outline-none" placeholder="Search..." style="flex-grow: 2;">
+                <div class="w-10 h-10 bg-gray-300 rounded-full ml-4"></div>
+            </div>
+        </div>
+        <!-- filters -->
+        <div class="filter-box p-4 mb-6 ml-6 mr-6 rounded-lg">
+            <div class="recommended-label mb-2">
+                <p>
+                    Filters
+                </p>
+            </div>
+            <div id="filter-content" class="filter-selection space-x-4">
+                <div class="filter-cat rounded-lg">
+                    <div class="filter-label">
+                        <p>Difficulty</p>
+                        <input type="checkbox" id="easy" class="">
+                        <label for="easy" class="checkbox-stuff "> Beginner </label><br>
+                        <input type="checkbox" id="inter" class="">
+                        <label for="inter" class="checkbox-stuff "> Intermediate </label><br>
+                        <input type="checkbox" id="adv" class="">
+                        <label for="adv" class="checkbox-stuff "> Advanced </label><br>
+                        <input type="checkbox" id="exp" class="">
+                        <label for="exp" class="checkbox-stuff "> Expert </label><br>
+                    </div>
+                </div>
+                <div class="filter-cat rounded-lg">
+                    <div class="filter-label">
+                        <p>Duration</p>
+                        <!-- Slider HTML -->
+                        <div class="slider-container">
+                            <input type="range" min="2" max="42" value="2" class="slider" id="myRange">
+                        </div>
+
+                        <!-- Labels for the slider -->
+                        <div class="slider-labels">
+                            <div class="label-min">
+                                <label for="myRange">Min</label>
+                                <input type="text" id="minValue" value="5 min">
+                            </div>
+                            <div class="label-max">
+                                <label for="myRange">Max</label>
+                                <input type="text" id="maxValue" value="13 h+">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="filter-cat rounded-lg">
+                    <div class="filter-label">
+                        <p>Language</p>
+                        <input type="checkbox" id="ger" class="">
+                        <label for="ger" class="checkbox-stuff "> German </label><br>
+                        <input type="checkbox" id="fr" class="">
+                        <label for="fr" class="checkbox-stuff "> French </label><br>
+                        <input type="checkbox" id="it" class="">
+                        <label for="it" class="checkbox-stuff "> Italian </label><br>
+                        <input type="checkbox" id="r" class="">
+                        <label for="r" class="checkbox-stuff "> Rhaeto-Romanic </label><br>
+                        <input type="checkbox" id="en" class="">
+                        <label for="en" class="checkbox-stuff "> Englsih </label><br>
+                        <input type="checkbox" id="sp" class="">
+                        <label for="sp" class="checkbox-stuff "> Spanish </label><br>
+                    </div>
+                </div>
+                <div class="filter-cat rounded-lg">
+                    <div class="filter-label">
+                        <p>Institute</p>
+                        <input type="checkbox" id="ETH" class="">
+                        <label for="ETH" class="checkbox-stuff "> ETH </label><br>
+                        <input type="checkbox" id="IBM" class="">
+                        <label for="IBM" class="checkbox-stuff "> IBM </label><br>
+                        <input type="checkbox" id="EFPL" class="">
+                        <label for="EFPL" class="checkbox-stuff "> EFPL </label><br>
+                        <input type="checkbox" id="UZH" class="">
+                        <label for="UZH" class="checkbox-stuff "> UZH </label><br>
+                        <input type="checkbox" id="Google" class="">
+                        <label for="Google" class="checkbox-stuff "> Google </label><br>
+                        <input type="checkbox" id="JPL" class="">
+                        <label for="JPL" class="checkbox-stuff "> JPL </label><br>
+                        <input type="checkbox" id="Uni Bern" class="">
+                        <label for="Uni Bern" class="checkbox-stuff "> Uni Bern </label><br>
+                        <input type="checkbox" id="HSLU" class="">
+                        <label for="HSLU" class="checkbox-stuff "> HSLU </label><br>
+                        <input type="checkbox" id="Nasa" class="">
+                        <label for="Nasa" class="checkbox-stuff "> Nasa </label><br>
+                        <input type="checkbox" id="Swiss Gov." class="">
+                        <label for="Swiss Gov." class="checkbox-stuff "> Swiss Gov. </label><br>
+                        <input type="checkbox" id="Uni Basel" class="">
+                        <label for="Uni Basel" class="checkbox-stuff "> Uni Basel </label><br>
+                        <input type="checkbox" id="HSG" class="">
+                        <label for="HSG" class="checkbox-stuff "> HSG </label><br>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Displayed courses-->
+        <div class=" course-selection p-4 mb-6 ml-6 mr-6 rounded-lg">
+            <div class="recommended-label mb-2">
+                <p>Courses:</p>
+            </div>
+            <div class="course-grid grid grid-cols-4">
+                <a href="ls_course.html"><div class="single-course rounded-lg"><div class="hover-text">Description of course here</div></div></a>
+                <a href="ls_course.html"><div class="single-course rounded-lg"><div class="hover-text">Description of course here</div></div></a>
+                <a href="ls_course.html"><div class="single-course rounded-lg"><div class="hover-text">Description of course here</div></div></a>
+                <a href="ls_course.html"><div class="single-course rounded-lg"><div class="hover-text">Description of course here</div></div></a>
+                <a href="ls_course.html"><div class="single-course rounded-lg"><div class="hover-text">Description of course here</div></div></a>
+                <a href="ls_course.html"><div class="single-course rounded-lg"><div class="hover-text">Description of course here</div></div></a>
+                <a href="ls_course.html"><div class="single-course rounded-lg"><div class="hover-text">Description of course here</div></div></a>
+                <a href="ls_course.html"><div class="single-course rounded-lg"><div class="hover-text">Description of course here</div></div></a>
+                <a href="ls_course.html"><div class="single-course rounded-lg"><div class="hover-text">Description of course here</div></div></a>
+                <a href="ls_course.html"><div class="single-course rounded-lg"><div class="hover-text">Description of course here</div></div></a>
+                <a href="ls_course.html"><div class="single-course rounded-lg"><div class="hover-text">Description of course here</div></div></a>
+                <a href="ls_course.html"><div class="single-course rounded-lg"><div class="hover-text">Description of course here</div></div></a>
+                <a href="ls_course.html"><div class="single-course rounded-lg"><div class="hover-text">Description of course here</div></div></a>
+                <a href="ls_course.html"><div class="single-course rounded-lg"><div class="hover-text">Description of course here</div></div></a>
+                <a href="ls_course.html"><div class="single-course rounded-lg"><div class="hover-text">Description of course here</div></div></a>
+                <a href="ls_course.html"><div class="single-course rounded-lg"><div class="hover-text">Description of course here</div></div></a>
+            </div>
+
+        </div>
+        <!-- Show more button -->
+        <div class="button-container text-center my-6">
+            <button class="bg-red-500 text-white font-bold py-2 px-4 rounded hover:text-gray-300">
+                Show more
+            </button>
+        </div>
+    </div>
+  <script src=script.js></script>
+  </body>
+  </html>
