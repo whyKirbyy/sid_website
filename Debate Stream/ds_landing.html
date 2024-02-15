@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Politician Profile Dashboard</title>
+  <link rel="stylesheet" href=style.css>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans leading-normal text-gray-900">
+    <!-- Sidebar DIV-->
+    <div class="container mx-auto flex flex-col">
+      <!-- Sidebar -->
+      <div id="sidebar" class="sidebar">
+        <!-- Hamburger Icon -->
+        <div class="hamburger" onclick="toggleSidebar()">
+          &#9776;
+        </div>
+        <!-- Menu -->
+        <ul class="sidebar-menu">
+          <li><a href="sidebar/profile.html">Profile</a></li>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="sidebar/about.html">About</a></li>
+          <li><a href="sidebar/services.html">Services</a></li>
+          <li><a href="sidebar/contact.html">Contact</a></li>
+          </ul>
+      </div>
+    </div>
+    <!-- Main Content DIV -->
+    <div id="page-container">
+        <!-- Main Content Area -->
+        <div id="main-content" class="flex">
+            <!-- Video Player Container -->
+            <div id="video-container" class="w-3/4">
+                <!-- Video Player -->
+                <div id="video-player">
+                  <!-- Video Controls Wrapper at the Bottom -->
+                  <div class="video-controls-wrapper">
+                    <div id="progress-bar-container">
+                      <button id="play-pause-btn" class="play">&#x25BA;</button> <!-- Play icon -->
+                      <div id="progress-bar" style="width: 0%;"></div> <!-- Progress Bar -->
+                      <button id="full-screen" class="screen">&#9974;</button>
+                    </div>
+                  </div>
+                </div>                               
+                <div class="stream-info">
+                    <p>Debate XYZ about topic ABC with Name Name and Name Name</p>
+                </div>
+            </div>
+        
+            <!-- Chat Container -->
+            <div id="chat-container" class="w-1/4">
+                <!-- Chat Messages -->
+                <div id="chat-messages">
+                <!-- Chat messages will be dynamically added here -->
+                </div>
+                <!-- Chat Input -->
+                <div id="chat-input" class="chat-input-wrapper">
+                  <input type="text" placeholder="Send a message" id="chat-message-input" />
+                  <button id="send-message-btn" class="send-message-btn">&#8593;</button>
+              </div>
+            </div>
+        </div>
+    </div>
+  <script src=script.js></script>
+  </body>
+  </html>
