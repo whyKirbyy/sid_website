@@ -1,0 +1,295 @@
+.card-height-adjusted {
+    height: 320px; 
+}
+
+.card-height-adjusted-personal {
+    min-height: 720px; 
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+.w14 {
+    width: 25%;
+}
+
+.sticky {
+    position: sticky;
+    top: 0;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    height: 100%;
+    width: 50px; /* Width of the collapsed sidebar */
+    position: fixed;
+    z-index: 2; /* Ensure sidebar is above the dimmed content */
+    top: 0;
+    left: 0;
+    background-color: red; /* Set the background color for the sidebar */
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: width ease, background-color ease; /* Combine transition properties */
+}
+  /* Sidebar menu styles */
+  
+.sidebar-menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+  
+.sidebar-menu li a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #ffffff;
+    display: block;
+    transition: 0.3s;
+    display: none; /* Hide text by default */
+    z-index: 2; /* Above the dimmed body */
+}
+  
+.sidebar-menu li a:hover {
+    color: #c4c4c4;
+}
+
+.sidebar.sidebar-expanded .sidebar-menu li a {
+    display: block; /* Show text when sidebar is expanded */
+}
+
+body.sidebar-expanded::before {
+    content: "";
+    position: fixed; /* Fixed position */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Dimming effect */
+    z-index: 2; /* Below the sidebar, above the content */
+    pointer-events: none; /* Allows clicks to pass through */
+}
+  
+  /* Hamburger Icon */
+.hamburger {
+    position: absolute;
+    left: 50%;
+    top: 16px; /* Adjust as necessary to position from the top */
+    transform: translateX(-50%); /* Center the element in the middle of the sidebar */
+    cursor: pointer;
+    color: #fff; /* Change the color if you want */
+    font-size: 30px;
+    z-index: 4; /* Above the dimmed body and sidebar */
+    z-index: 5; /* Ensure it's above everything else */
+    transition: top 0.5s; /* Animate the change in position */
+}
+  
+/* Adjust position when sidebar is expanded */
+.sidebar.sidebar-expanded .hamburger {
+    top: 16px; 
+    left: 17%;
+}
+
+  /* Page content */
+#main-content {
+    transition: margin-left 0.5s, background-color 0.5s; /* Add background-color transition */
+}
+  
+  /* When the sidebar is expanded, add a margin to the page content */
+#main-content.sidebar-expanded {
+    margin-left: 200px;
+}
+
+.sidebar.sidebar-expanded { /* Make sure this is as specific as the .sidebar selector */
+    width: 250px;
+    background-color: red; /* Keep the background color red for consistency */
+    z-index: 3; /* Above the dimmed body */
+}
+
+.sidebar-expanded .sidebar-menu li a {
+    display: block;
+}
+
+#page-container {
+    transition: background-color 0.5s, pointer-events 0.5s; /* Smooth transition for background color and pointer-events */
+}
+
+.sidebar .logo_name,
+.sidebar .nav-list .links_name {
+  display: none;
+}
+
+.sidebar.open .logo_name,
+.sidebar.open .nav-list .links_name {
+  display: block;
+}
+
+.shopping-cart{
+    color: black;
+    margin-left: 10px;
+    height: 30px;
+}
+
+button .shopping-cart:hover path{
+    stroke: #ff0000;
+}
+
+.making-red{
+    stroke: #ff0000;
+    color: #ff0000;
+}
+
+.site-header{
+    margin-left: 65px;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.scroll-container {
+    display: flex;
+    overflow-y: scroll;
+    margin-left: 60px;
+    gap: 10px; 
+    margin-top: 5px;
+}
+
+.scroll-box-warper {
+    position: relative; /* Make it a positioning context for absolute children */
+    width: 24%; 
+    height: 280px;
+    background-color: #ffffff;
+    padding: 20px; 
+    flex-shrink: 0;
+
+}
+
+.scroll-box-content {
+    width: 100%;
+    height: 90%;
+    background-color: #dddddd;
+    transition: background-color 0.3s; /* Smooth transition for background color */
+}
+
+.scroll-box-warper:hover .scroll-box-content {
+    background-color: #eeeeee; /* Lighten the box */
+}
+
+.scroll-box-warper:hover{
+    border: 2px solid #ff0000;
+}
+
+.scroll-box-warper:hover .sponsor-text{
+    color: #ff0000;
+}
+
+.sponsor-text {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    position: absolute;
+    bottom: 10px; /* Adjust as needed */
+    left: 0;
+    right: 0;
+}
+
+.hover-text {
+    display: none; /* Initially hidden */
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #000; /* Text color */
+    text-align: center;
+    width: calc(100% - 20px); /* Adjust width to allow for padding */
+    height: calc(100% - 20px); /* Adjust height to allow for padding */
+    overflow: scroll;
+    word-wrap: break-word;
+    padding: 10px; /* Add padding inside the box */
+}
+
+
+.scroll-box-content:hover .hover-text {
+    display: block; /* Show on hover */
+}
+
+/* Container for all accordion items */
+.accordion {
+    background-color: #ffffff; /* White background */
+    border-radius: 8px; /* Rounded corners */
+    margin-right: 10px;
+    margin-left: 60px;
+  }
+  
+  /* Style the top-level accordion headers */
+  .accordion-header {
+    background-color: #ffffff; /* Slightly off-white, you can choose your color */
+    color: #000000; /* Dark text color for contrast */
+    cursor: pointer;
+    padding: 16px;
+    width: 100%;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 8px; /* Rounded corners */
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  /* Style for the top-level accordion content wrapper */
+  .accordion-content {
+    display: none; /* Hidden by default */
+    background-color: #ffffff; /* White background */
+    border-radius: 8px; /* Rounded corners */
+    font-size: 20px;
+  }
+
+.accordion-subitem{
+    font-size: 20px;
+}
+  
+  /* Style the sub-level accordion headers */
+  .accordion .accordion-content .accordion-subitem .accordion-header {
+    background-color: #ffffff; /* Slightly off-white, you can choose your color */
+    font-size: 0.9em;
+    padding-left: 50px; /* Indent subitem headers */
+  }
+  
+  /* Style the sub-level accordion content wrapper */
+  .accordion .accordion-content .accordion-subitem .accordion-content {
+    padding: 0 50px; /* Indent subitem content */
+  }
+  
+  /* Rotate the toggle symbol when content is open */
+  .accordion-content-active .accordion-toggle {
+    transform: rotate(90deg);
+  }
+
+.accordion-content2 {
+    display: none; /* Hidden by default */
+    background-color: #ffffff; /* White background */
+    font-size: 18px;
+    margin-left: 70px;
+}
+
+.item{
+    padding: 10px;
+    border-bottom: 1px solid #eaeaea; /* Light line at the bottom */
+}
+
+.item-link:hover{
+    color: #ff0000;
+    font-weight: bold;
+}
+
+.accordion-header:hover{
+    color: #ff0000;
+}
