@@ -36,9 +36,9 @@ document.addEventListener('DOMContentLoaded', function() {
         if (event.key === 'Escape' && sidebar.classList.contains('sidebar-expanded')) {
             toggleSidebar();
         }
-        else if (event.key === 'M' || event.key === 'm') {
-            toggleSidebar();
-        }
+        if ((event.metaKey || event.ctrlKey) && event.key === 'm') {
+          toggleSidebar(); // Call your existing toggleSidebar function
+      }
     });
 
     // Sidebar toggle on click outside
@@ -58,19 +58,40 @@ document.addEventListener('DOMContentLoaded', function() {
     var messageInput = document.getElementById('chat-message-input');
 
     sendMessageBtn.addEventListener('click', function() {
-        var message = messageInput.value;
-        if (message.trim() !== '') {
-            // Code to send the message
-            console.log("Message sent:", message); // Replace with your send message code
-            messageInput.value = ''; // Clear the input field after sending
-        }
-      });
-        // Optionally, send the message when the Enter key is pressed
-        messageInput.addEventListener('keypress', function(e) {
-          if (e.key === 'Enter') {
-              sendMessageBtn.click();
-          }
-      });
+      var message = messageInput.value;
+      if (message.trim() !== '') {
+          addMessageToChat("Name", message); // Add the message to the chat
+          messageInput.value = ''; // Clear the input field after sending
+      }
+  });
+    // Optionally, send the message when the Enter key is pressed
+    messageInput.addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') {
+          sendMessageBtn.click();
+      }
+    });
+
+    const chatMessages = [
+      { name: "Alice", message: "Hello everyone!" },
+      { name: "Bob", message: "How's it going?" },
+      { name: "Charlie", message: "Can't wait for the next debate." },
+      { name: "Diana", message: "Excited for the next one" },
+      { name: "Ethan", message: "I am an Ai Chatbot by OpenAi" },
+      { name: "Fiona", message: "I do not agree to this." },
+      { name: "George", message: "Hello, everyone! Just joined." },
+      { name: "Hannah", message: "Anyone here into politics?" },
+      { name: "Ian", message: "Happy to be a part of this event." },
+      {name: "ChatGPT", message: "As an AI developed by OpenAI, I am a program designed to process information and generate responses based on data and algorithms. My interactions are based on patterns and rules from the data I've been trained on, not emotions or personal experiences. "}
+    ];
+
+    const chatContainer = document.getElementById('chat-messages');
+
+    chatMessages.forEach(msg => {
+      const messageElement = document.createElement('div');
+      messageElement.classList.add('chat-message');
+      messageElement.innerHTML = `<strong>${msg.name}</strong>: ${msg.message}`; // Use innerHTML to parse the <strong> tag
+      chatContainer.appendChild(messageElement);
+    });
       
 });
 
@@ -124,3 +145,11 @@ function adjustStylesForFullscreen() {
   }
 }
 
+function addMessageToChat(name, message) {
+  const chatContainer = document.getElementById('chat-messages');
+  const messageElement = document.createElement('div');
+  messageElement.classList.add('chat-message');
+  messageElement.innerHTML = `<strong>${name}</strong>: ${message}`; // Use innerHTML to parse the <strong> tag
+  chatContainer.appendChild(messageElement);
+  chatContainer.scrollTop = chatContainer.scrollHeight; // Scroll to the bottom of the chat
+}
