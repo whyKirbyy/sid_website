@@ -203,6 +203,10 @@ body.sidebar-expanded::before {
     color: #ffffff;
 }
 
+#play-pause-btn:hover{
+    color: #ff0000;
+}
+
 #progress-bar-container {
     display: flex; /* Use flexbox to align the button and progress bar */
     align-items: center; /* Center items vertically */
@@ -222,6 +226,9 @@ body.sidebar-expanded::before {
     width: 100%;
     height: 65%;
     background-color: #000000; /* Dark red background as in your screenshot */
+    display: flex;
+    justify-content: center; /* Center children horizontally */
+    align-items: center; /* Center children vertically */
 }
 
 /* New wrapper for video controls to position them at the bottom */
@@ -305,3 +312,46 @@ body.sidebar-expanded::before {
     color: #ff0000;
 }
 
+#video-info-text {
+    position: absolute; /* Position it over the video player */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex; /* Use flexbox */
+    flex-direction: column; /* Stack children vertically */
+    justify-content: center; /* Center children horizontally in the main axis */
+    align-items: center; /* Center children vertically in the cross axis */
+}
+
+#bigger-info-text {
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center; /* Center the text within its container */
+}
+
+#smaller-info-text {
+    color: #fff;
+    text-align: center; /* Center the text within its container */
+}
+
+#full-screen:hover{
+    color: #ff0000;
+}
+
+#chat-messages {
+    overflow-y: auto;
+    height: 90%;
+    padding: 10px; /* Add padding for space around messages */
+    background-color: white;
+}
+
+.chat-message {
+    margin-bottom: 5px; /* Space between messages */
+}
+
+.chat-message strong {
+    font-weight: bold;
+    color: #ff0000;
+}
