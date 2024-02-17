@@ -257,21 +257,21 @@ button .shopping-cart:hover path{
 }
   
   /* Style the sub-level accordion headers */
-  .accordion .accordion-content .accordion-subitem .accordion-header {
+.accordion .accordion-content .accordion-subitem .accordion-header {
     background-color: #ffffff; /* Slightly off-white, you can choose your color */
     font-size: 0.9em;
     padding-left: 50px; /* Indent subitem headers */
-  }
+}
   
   /* Style the sub-level accordion content wrapper */
-  .accordion .accordion-content .accordion-subitem .accordion-content {
+.accordion .accordion-content .accordion-subitem .accordion-content {
     padding: 0 50px; /* Indent subitem content */
-  }
+}
   
   /* Rotate the toggle symbol when content is open */
-  .accordion-content-active .accordion-toggle {
+.accordion-content-active .accordion-toggle {
     transform: rotate(90deg);
-  }
+}
 
 .accordion-content2 {
     display: none; /* Hidden by default */
@@ -280,16 +280,170 @@ button .shopping-cart:hover path{
     margin-left: 70px;
 }
 
-.item{
-    padding: 10px;
-    border-bottom: 1px solid #eaeaea; /* Light line at the bottom */
+.accordion-header:hover{
+    color: #ff0000;
 }
 
-.item-link:hover{
+.item-container {
+    display: flex;
+    margin-left: auto;
+    justify-content: space-between; /* This will spread the child elements across the container */
+    border-bottom: 1px solid #000000;
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+
+.number-input-container {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+.number-input-container button {
+    color: #ffffff;
+}
+
+.number-input-container input.number-input {
+    width: 30px; /* Adjust the width as needed to make it smaller */
+    height: 20px; /* You can also adjust the height if needed */
+    text-align: center;
+    /* Add any additional styling such as borders, padding, etc. */
+}
+
+.number-input{
+    border-radius: 5px;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+.number-input:focus{
+    border: 0px solid;
+}
+
+.plus-btn{
+    background-color: #ff0000;
+    color: #ffffff;
+    border-radius: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-right: 5px;
+}
+
+.minus-btn{
+    background-color: #ff0000;
+    color: #ffffff;
+    border-radius: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.add-btn {
+    background-color: #ff0000;
+    color: #ffffff;
+    border-radius: 5px;
+    margin-right: 5px;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+.item:hover{
     color: #ff0000;
+}
+
+/* Initially hide the cart dropdown */
+.cart-dropdown {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: white;
+    border-radius: 5px;
+    padding: 10px;
+    width: 300px; /* Adjust width as needed */
+    z-index: 100;
+    margin-right: 10px;
+    border: 1px solid #000000;
+}
+
+/* Display the cart dropdown on hover */
+.shopping-cart-btn:hover .cart-dropdown {
+    display: block;
+}
+
+.cart-items {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 10px;
+}
+
+.checkout-btn {
+    display: block;
+    text-align: center;
+    padding: 10px 20px;
+    background-color: #ff0000;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.checkout-btn:hover{
+    color: #c4c4c4;
+}
+
+.cart-header{
+    font-size: 18px;
     font-weight: bold;
 }
 
-.accordion-header:hover{
+.shopping-preview{
+    background-color: #ffffff;
+    width: 94%; /* fixed width for testing */
+    height: 280px;
+    margin-left: 60px;
+    margin-right: 10px;
+    align-items: center;
+    justify-items: center;
+    display: flex;
+}
+
+.inner-wraper{
+    width: 90%;
+    display: flex;
+    margin-left: 20px;
+    margin-right: 10px;
+}
+
+.recommended {
+    width: 25%;
+    background-color: #dddddd;
+    height: 240px; 
+    margin-right: 10px;
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    text-align: center; 
+    padding: 10px; 
+    box-sizing: border-box; 
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.links:hover{
     color: #ff0000;
+}
+
+.recommended:hover{
+    border: 2px solid #ff0000;
+}
+
+.shopping-button{
+    font-size: 60px;
+    font-weight: bold;
+}
+
+.shopping-button:hover{
+    color: #ff0000;
+}
+
+.shopping-preview.red-border {
+    border: 2px solid #ff0000;
 }
