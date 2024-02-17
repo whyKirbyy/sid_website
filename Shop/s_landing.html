@@ -32,7 +32,7 @@
         <div class=" mx-auto sm:px-6 mb-4">
             <div class="flex items-center mb-4 ml-10">
                 <input type="text" class="rounded-full p-2 focus:outline-none" placeholder="Search items of objects..." style="flex-grow: 2;">
-                <button>
+                <button class="shopping-cart-btn">
                     <svg class="shopping-cart" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                       <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
@@ -42,6 +42,13 @@
                         </g>
                         </g>
                     </svg>
+                    <div class="cart-dropdown hidden">
+                        <h3 class="cart-header">Your Cart</h3>
+                        <ul class="cart-items">
+                            <!-- Cart items will be inserted here dynamically -->
+                        </ul>
+                        <a href="#" class="checkout-btn">Checkout</a>
+                    </div>
                 </button>
                 <div class="w-10 h-10 bg-gray-300 rounded-full ml-4"></div>
             </div>
@@ -107,7 +114,23 @@
         </div>
         <!-- Shopping stuff -->
         <h1 class="site-header mt-5 mb-2">Shopping: </h1>
-
+        <div class="shopping-preview rounded-lg">
+            <div class="inner-wraper">
+                <div class="recommended rounded-lg">
+                    <a href="s_sub_cat.html" class="links">Recommended Item Category</a>
+                </div>
+                <div class="recommended rounded-lg">
+                    <a href="s_sub_cat.html" class="links">Recommended Item Category</a>
+                </div>
+                <div class="recommended rounded-lg">
+                    <a href="s_sub_cat.html" class="links">Recommended Item Category</a>
+                </div>
+                <div class="recommended rounded-lg">
+                    <a href="s_sub_cat.html" class="links">Recommended Item Category</a>
+                </div>
+            </div>
+            <a href="s_categories.html" class="shopping-button"> &#8594; </a>
+        </div>
         <!-- Quick Shopping Stuff -->
         <h1 class="site-header mt-5 mb-2">Quick Shopping: </h1>
         <div class="accordion">
@@ -123,16 +146,96 @@
                             <span class="accordion-toggle">▶</span>
                         </div>
                         <div class="accordion-content2">
-                            <a href="#" class="item-link"><p class="item">item 1</p></a>
-                            <a href="#" class="item-link"><p class="item">item 2</p></a>
-                            <a href="#" class="item-link"><p class="item">item 3</p></a>
-                            <a href="#" class="item-link"><p class="item">item 4</p></a>
-                            <a href="#" class="item-link"><p class="item">item 5</p></a>
-                            <a href="#" class="item-link"><p class="item">item 6</p></a>
-                            <a href="#" class="item-link"><p class="item">item 7</p></a>
-                            <a href="#" class="item-link"><p class="item">item 8</p></a>
-                            <a href="#" class="item-link"><p class="item">item 9</p></a>
-                            <a href="#" class="item-link"><p class="item">item 10</p></a>
+                            <div class="item-container">
+                                <a href="s_item.html"><p class="item">item 1</p></a>
+                                <div class="number-input-container">
+                                    <button onclick="decrementValue(this)" class="minus-btn text-white">-</button>
+                                    <input type="text" class="number-input" value="0" readonly>
+                                    <button onclick="incrementValue(this)" class="plus-btn">+</button>
+                                </div>
+                                <button class="add-btn">Add</button>
+                            </div>                
+                            <div class="item-container">
+                                <a href="s_item.html"><p class="item">item 2</p></a>
+                                <div class="number-input-container">
+                                    <button onclick="decrementValue(this)" class="minus-btn text-white">-</button>
+                                    <input type="text" class="number-input" value="0" readonly>
+                                    <button onclick="incrementValue(this)" class="plus-btn">+</button>
+                                </div>
+                                <button class="add-btn">Add</button>
+                            </div>  
+                            <div class="item-container">
+                                <a href="s_item.html"><p class="item">item 3</p></a>
+                                <div class="number-input-container">
+                                    <button onclick="decrementValue(this)" class="minus-btn text-white">-</button>
+                                    <input type="text" class="number-input" value="0" readonly>
+                                    <button onclick="incrementValue(this)" class="plus-btn">+</button>
+                                </div>
+                                <button class="add-btn">Add</button>
+                            </div>  
+                            <div class="item-container">
+                                <a href="s_item.html"><p class="item">item 4</p></a>
+                                <div class="number-input-container">
+                                    <button onclick="decrementValue(this)" class="minus-btn text-white">-</button>
+                                    <input type="text" class="number-input" value="0" readonly>
+                                    <button onclick="incrementValue(this)" class="plus-btn">+</button>
+                                </div>
+                                <button class="add-btn">Add</button>
+                            </div>  
+                            <div class="item-container">
+                                <a href="s_item.html"><p class="item">item 5</p></a>
+                                <div class="number-input-container">
+                                    <button onclick="decrementValue(this)" class="minus-btn text-white">-</button>
+                                    <input type="text" class="number-input" value="0" readonly>
+                                    <button onclick="incrementValue(this)" class="plus-btn">+</button>
+                                </div>
+                                <button class="add-btn">Add</button>
+                            </div>  
+                            <div class="item-container">
+                                <a href="s_item.html"><p class="item">item 6</p></a>
+                                <div class="number-input-container">
+                                    <button onclick="decrementValue(this)" class="minus-btn text-white">-</button>
+                                    <input type="text" class="number-input" value="0" readonly>
+                                    <button onclick="incrementValue(this)" class="plus-btn">+</button>
+                                </div>
+                                <button class="add-btn">Add</button>
+                            </div>  
+                            <div class="item-container">
+                                <a href="s_item.html"><p class="item">item 7</p></a>
+                                <div class="number-input-container">
+                                    <button onclick="decrementValue(this)" class="minus-btn text-white">-</button>
+                                    <input type="text" class="number-input" value="0" readonly>
+                                    <button onclick="incrementValue(this)" class="plus-btn">+</button>
+                                </div>
+                                <button class="add-btn">Add</button>
+                            </div>  
+                            <div class="item-container">
+                                <a href="s_item.html"><p class="item">item 8</p></a>
+                                <div class="number-input-container">
+                                    <button onclick="decrementValue(this)" class="minus-btn text-white">-</button>
+                                    <input type="text" class="number-input" value="0" readonly>
+                                    <button onclick="incrementValue(this)" class="plus-btn">+</button>
+                                </div>
+                                <button class="add-btn">Add</button>
+                            </div>  
+                            <div class="item-container">
+                                <a href="s_item.html"><p class="item">item 9</p></a>
+                                <div class="number-input-container">
+                                    <button onclick="decrementValue(this)" class="minus-btn text-white">-</button>
+                                    <input type="text" class="number-input" value="0" readonly>
+                                    <button onclick="incrementValue(this)" class="plus-btn">+</button>
+                                </div>
+                                <button class="add-btn">Add</button>
+                            </div>  
+                            <div class="item-container">
+                                <a href="s_item.html"><p class="item">item 10</p></a>
+                                <div class="number-input-container">
+                                    <button onclick="decrementValue(this)" class="minus-btn text-white">-</button>
+                                    <input type="text" class="number-input" value="0" readonly>
+                                    <button onclick="incrementValue(this)" class="plus-btn">+</button>
+                                </div>
+                                <button class="add-btn">Add</button>
+                            </div>  
                             <!-- Further nested content if needed -->
                         </div>
                     </div>
@@ -142,17 +245,98 @@
                         <span class="accordion-toggle">▶</span>
                         </div>
                         <div class="accordion-content2">
-                            <a href="#" class="item-link"><p class="item">item 1</p></a>
-                            <a href="#" class="item-link"><p class="item">item 2</p></a>
-                            <a href="#" class="item-link"><p class="item">item 3</p></a>
-                            <a href="#" class="item-link"><p class="item">item 4</p></a>
-                            <a href="#" class="item-link"><p class="item">item 5</p></a>
-                            <a href="#" class="item-link"><p class="item">item 6</p></a>
-                            <a href="#" class="item-link"><p class="item">item 7</p></a>
-                            <a href="#" class="item-link"><p class="item">item 8</p></a>
-                            <a href="#" class="item-link"><p class="item">item 9</p></a>
-                            <a href="#" class="item-link"><p class="item">item 10</p></a>
+                            <div class="item-container">
+                                <a href="#"><p class="item">item 1</p></a>
+                                <div class="number-input-container">
+                                    <button onclick="decrementValue(this)" class="minus-btn text-white">-</button>
+                                    <input type="text" class="number-input" value="0" readonly>
+                                    <button onclick="incrementValue(this)" class="plus-btn">+</button>
+                                </div>
+                                <button class="add-btn">Add</button>
+                            </div>                
+                            <div class="item-container">
+                                <a href="#"><p class="item">item 2</p></a>
+                                <div class="number-input-container">
+                                    <button onclick="decrementValue(this)" class="minus-btn text-white">-</button>
+                                    <input type="text" class="number-input" value="0" readonly>
+                                    <button onclick="incrementValue(this)" class="plus-btn">+</button>
+                                </div>
+                                <button class="add-btn">Add</button>
+                            </div>  
+                            <div class="item-container">
+                                <a href="#"><p class="item">item 3</p></a>
+                                <div class="number-input-container">
+                                    <button onclick="decrementValue(this)" class="minus-btn text-white">-</button>
+                                    <input type="text" class="number-input" value="0" readonly>
+                                    <button onclick="incrementValue(this)" class="plus-btn">+</button>
+                                </div>
+                                <button class="add-btn">Add</button>
+                            </div>  
+                            <div class="item-container">
+                                <a href="#"><p class="item">item 4</p></a>
+                                <div class="number-input-container">
+                                    <button onclick="decrementValue(this)" class="minus-btn text-white">-</button>
+                                    <input type="text" class="number-input" value="0" readonly>
+                                    <button onclick="incrementValue(this)" class="plus-btn">+</button>
+                                </div>
+                                <button class="add-btn">Add</button>
+                            </div>  
+                            <div class="item-container">
+                                <a href="#"><p class="item">item 5</p></a>
+                                <div class="number-input-container">
+                                    <button onclick="decrementValue(this)" class="minus-btn text-white">-</button>
+                                    <input type="text" class="number-input" value="0" readonly>
+                                    <button onclick="incrementValue(this)" class="plus-btn">+</button>
+                                </div>
+                                <button class="add-btn">Add</button>
+                            </div>  
+                            <div class="item-container">
+                                <a href="#"><p class="item">item 6</p></a>
+                                <div class="number-input-container">
+                                    <button onclick="decrementValue(this)" class="minus-btn text-white">-</button>
+                                    <input type="text" class="number-input" value="0" readonly>
+                                    <button onclick="incrementValue(this)" class="plus-btn">+</button>
+                                </div>
+                                <button class="add-btn">Add</button>
+                            </div>  
+                            <div class="item-container">
+                                <a href="#"><p class="item">item 7</p></a>
+                                <div class="number-input-container">
+                                    <button onclick="decrementValue(this)" class="minus-btn text-white">-</button>
+                                    <input type="text" class="number-input" value="0" readonly>
+                                    <button onclick="incrementValue(this)" class="plus-btn">+</button>
+                                </div>
+                                <button class="add-btn">Add</button>
+                            </div>  
+                            <div class="item-container">
+                                <a href="#"><p class="item">item 8</p></a>
+                                <div class="number-input-container">
+                                    <button onclick="decrementValue(this)" class="minus-btn text-white">-</button>
+                                    <input type="text" class="number-input" value="0" readonly>
+                                    <button onclick="incrementValue(this)" class="plus-btn">+</button>
+                                </div>
+                                <button class="add-btn">Add</button>
+                            </div>  
+                            <div class="item-container">
+                                <a href="#"><p class="item">item 9</p></a>
+                                <div class="number-input-container">
+                                    <button onclick="decrementValue(this)" class="minus-btn text-white">-</button>
+                                    <input type="text" class="number-input" value="0" readonly>
+                                    <button onclick="incrementValue(this)" class="plus-btn">+</button>
+                                </div>
+                                <button class="add-btn">Add</button>
+                            </div>  
+                            <div class="item-container">
+                                <a href="#"><p class="item">item 10</p></a>
+                                <div class="number-input-container">
+                                    <button onclick="decrementValue(this)" class="minus-btn text-white">-</button>
+                                    <input type="text" class="number-input" value="0" readonly>
+                                    <button onclick="incrementValue(this)" class="plus-btn">+</button>
+                                </div>
+                                <button class="add-btn">Add</button>
+                            </div>  
                             <!-- Further nested content if needed -->
+                        </div>
                     </div>
                 </div>
                 <!-- Add more accordion-subitems as needed -->
@@ -169,16 +353,96 @@
                             <span class="accordion-toggle">▶</span>
                         </div>
                         <div class="accordion-content2">
-                            <a href="#" class="item-link"><p class="item">item 1</p></a>
-                            <a href="#" class="item-link"><p class="item">item 2</p></a>
-                            <a href="#" class="item-link"><p class="item">item 3</p></a>
-                            <a href="#" class="item-link"><p class="item">item 4</p></a>
-                            <a href="#" class="item-link"><p class="item">item 5</p></a>
-                            <a href="#" class="item-link"><p class="item">item 6</p></a>
-                            <a href="#" class="item-link"><p class="item">item 7</p></a>
-                            <a href="#" class="item-link"><p class="item">item 8</p></a>
-                            <a href="#" class="item-link"><p class="item">item 9</p></a>
-                            <a href="#" class="item-link"><p class="item">item 10</p></a>
+                            <div class="item-container">
+                                <a href="#"><p class="item">item 1</p></a>
+                                <div class="number-input-container">
+                                    <button onclick="decrementValue(this)" class="minus-btn text-white">-</button>
+                                    <input type="text" class="number-input" value="0" readonly>
+                                    <button onclick="incrementValue(this)" class="plus-btn">+</button>
+                                </div>
+                                <button class="add-btn">Add</button>
+                            </div>                
+                            <div class="item-container">
+                                <a href="#"><p class="item">item 2</p></a>
+                                <div class="number-input-container">
+                                    <button onclick="decrementValue(this)" class="minus-btn text-white">-</button>
+                                    <input type="text" class="number-input" value="0" readonly>
+                                    <button onclick="incrementValue(this)" class="plus-btn">+</button>
+                                </div>
+                                <button class="add-btn">Add</button>
+                            </div>  
+                            <div class="item-container">
+                                <a href="#"><p class="item">item 3</p></a>
+                                <div class="number-input-container">
+                                    <button onclick="decrementValue(this)" class="minus-btn text-white">-</button>
+                                    <input type="text" class="number-input" value="0" readonly>
+                                    <button onclick="incrementValue(this)" class="plus-btn">+</button>
+                                </div>
+                                <button class="add-btn">Add</button>
+                            </div>  
+                            <div class="item-container">
+                                <a href="#"><p class="item">item 4</p></a>
+                                <div class="number-input-container">
+                                    <button onclick="decrementValue(this)" class="minus-btn text-white">-</button>
+                                    <input type="text" class="number-input" value="0" readonly>
+                                    <button onclick="incrementValue(this)" class="plus-btn">+</button>
+                                </div>
+                                <button class="add-btn">Add</button>
+                            </div>  
+                            <div class="item-container">
+                                <a href="#"><p class="item">item 5</p></a>
+                                <div class="number-input-container">
+                                    <button onclick="decrementValue(this)" class="minus-btn text-white">-</button>
+                                    <input type="text" class="number-input" value="0" readonly>
+                                    <button onclick="incrementValue(this)" class="plus-btn">+</button>
+                                </div>
+                                <button class="add-btn">Add</button>
+                            </div>  
+                            <div class="item-container">
+                                <a href="#"><p class="item">item 6</p></a>
+                                <div class="number-input-container">
+                                    <button onclick="decrementValue(this)" class="minus-btn text-white">-</button>
+                                    <input type="text" class="number-input" value="0" readonly>
+                                    <button onclick="incrementValue(this)" class="plus-btn">+</button>
+                                </div>
+                                <button class="add-btn">Add</button>
+                            </div>  
+                            <div class="item-container">
+                                <a href="#"><p class="item">item 7</p></a>
+                                <div class="number-input-container">
+                                    <button onclick="decrementValue(this)" class="minus-btn text-white">-</button>
+                                    <input type="text" class="number-input" value="0" readonly>
+                                    <button onclick="incrementValue(this)" class="plus-btn">+</button>
+                                </div>
+                                <button class="add-btn">Add</button>
+                            </div>  
+                            <div class="item-container">
+                                <a href="#"><p class="item">item 8</p></a>
+                                <div class="number-input-container">
+                                    <button onclick="decrementValue(this)" class="minus-btn text-white">-</button>
+                                    <input type="text" class="number-input" value="0" readonly>
+                                    <button onclick="incrementValue(this)" class="plus-btn">+</button>
+                                </div>
+                                <button class="add-btn">Add</button>
+                            </div>  
+                            <div class="item-container">
+                                <a href="#"><p class="item">item 9</p></a>
+                                <div class="number-input-container">
+                                    <button onclick="decrementValue(this)" class="minus-btn text-white">-</button>
+                                    <input type="text" class="number-input" value="0" readonly>
+                                    <button onclick="incrementValue(this)" class="plus-btn">+</button>
+                                </div>
+                                <button class="add-btn">Add</button>
+                            </div>  
+                            <div class="item-container">
+                                <a href="#"><p class="item">item 10</p></a>
+                                <div class="number-input-container">
+                                    <button onclick="decrementValue(this)" class="minus-btn text-white">-</button>
+                                    <input type="text" class="number-input" value="0" readonly>
+                                    <button onclick="incrementValue(this)" class="plus-btn">+</button>
+                                </div>
+                                <button class="add-btn">Add</button>
+                            </div>  
                             <!-- Further nested content if needed -->
                         </div>
                     </div>
@@ -188,21 +452,723 @@
                         <span class="accordion-toggle">▶</span>
                         </div>
                         <div class="accordion-content2">
-                            <a href="#" class="item-link"><p class="item">item 1</p></a>
-                            <a href="#" class="item-link"><p class="item">item 2</p></a>
-                            <a href="#" class="item-link"><p class="item">item 3</p></a>
-                            <a href="#" class="item-link"><p class="item">item 4</p></a>
-                            <a href="#" class="item-link"><p class="item">item 5</p></a>
-                            <a href="#" class="item-link"><p class="item">item 6</p></a>
-                            <a href="#" class="item-link"><p class="item">item 7</p></a>
-                            <a href="#" class="item-link"><p class="item">item 8</p></a>
-                            <a href="#" class="item-link"><p class="item">item 9</p></a>
-                            <a href="#" class="item-link"><p class="item">item 10</p></a>
+                            <div class="item-container">
+                                <a href="#"><p class="item">item 1</p></a>
+                                <div class="number-input-container">
+                                    <button onclick="decrementValue(this)" class="minus-btn text-white">-</button>
+                                    <input type="text" class="number-input" value="0" readonly>
+                                    <button onclick="incrementValue(this)" class="plus-btn">+</button>
+                                </div>
+                                <button class="add-btn">Add</button>
+                            </div>                
+                            <div class="item-container">
+                                <a href="#"><p class="item">item 2</p></a>
+                                <div class="number-input-container">
+                                    <button onclick="decrementValue(this)" class="minus-btn text-white">-</button>
+                                    <input type="text" class="number-input" value="0" readonly>
+                                    <button onclick="incrementValue(this)" class="plus-btn">+</button>
+                                </div>
+                                <button class="add-btn">Add</button>
+                            </div>  
+                            <div class="item-container">
+                                <a href="#"><p class="item">item 3</p></a>
+                                <div class="number-input-container">
+                                    <button onclick="decrementValue(this)" class="minus-btn text-white">-</button>
+                                    <input type="text" class="number-input" value="0" readonly>
+                                    <button onclick="incrementValue(this)" class="plus-btn">+</button>
+                                </div>
+                                <button class="add-btn">Add</button>
+                            </div>  
+                            <div class="item-container">
+                                <a href="#"><p class="item">item 4</p></a>
+                                <div class="number-input-container">
+                                    <button onclick="decrementValue(this)" class="minus-btn text-white">-</button>
+                                    <input type="text" class="number-input" value="0" readonly>
+                                    <button onclick="incrementValue(this)" class="plus-btn">+</button>
+                                </div>
+                                <button class="add-btn">Add</button>
+                            </div>  
+                            <div class="item-container">
+                                <a href="#"><p class="item">item 5</p></a>
+                                <div class="number-input-container">
+                                    <button onclick="decrementValue(this)" class="minus-btn text-white">-</button>
+                                    <input type="text" class="number-input" value="0" readonly>
+                                    <button onclick="incrementValue(this)" class="plus-btn">+</button>
+                                </div>
+                                <button class="add-btn">Add</button>
+                            </div>  
+                            <div class="item-container">
+                                <a href="#"><p class="item">item 6</p></a>
+                                <div class="number-input-container">
+                                    <button onclick="decrementValue(this)" class="minus-btn text-white">-</button>
+                                    <input type="text" class="number-input" value="0" readonly>
+                                    <button onclick="incrementValue(this)" class="plus-btn">+</button>
+                                </div>
+                                <button class="add-btn">Add</button>
+                            </div>  
+                            <div class="item-container">
+                                <a href="#"><p class="item">item 7</p></a>
+                                <div class="number-input-container">
+                                    <button onclick="decrementValue(this)" class="minus-btn text-white">-</button>
+                                    <input type="text" class="number-input" value="0" readonly>
+                                    <button onclick="incrementValue(this)" class="plus-btn">+</button>
+                                </div>
+                                <button class="add-btn">Add</button>
+                            </div>  
+                            <div class="item-container">
+                                <a href="#"><p class="item">item 8</p></a>
+                                <div class="number-input-container">
+                                    <button onclick="decrementValue(this)" class="minus-btn text-white">-</button>
+                                    <input type="text" class="number-input" value="0" readonly>
+                                    <button onclick="incrementValue(this)" class="plus-btn">+</button>
+                                </div>
+                                <button class="add-btn">Add</button>
+                            </div>  
+                            <div class="item-container">
+                                <a href="#"><p class="item">item 9</p></a>
+                                <div class="number-input-container">
+                                    <button onclick="decrementValue(this)" class="minus-btn text-white">-</button>
+                                    <input type="text" class="number-input" value="0" readonly>
+                                    <button onclick="incrementValue(this)" class="plus-btn">+</button>
+                                </div>
+                                <button class="add-btn">Add</button>
+                            </div>  
+                            <div class="item-container">
+                                <a href="#"><p class="item">item 10</p></a>
+                                <div class="number-input-container">
+                                    <button onclick="decrementValue(this)" class="minus-btn text-white">-</button>
+                                    <input type="text" class="number-input" value="0" readonly>
+                                    <button onclick="incrementValue(this)" class="plus-btn">+</button>
+                                </div>
+                                <button class="add-btn">Add</button>
+                            </div>  
                             <!-- Further nested content if needed -->
+                        </div>
+                </div>
+                <!-- Add more accordion-subitems as needed -->
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-header" onclick="toggleAccordionContent(this)">
+                    Item Category 3
+                    <span class="accordion-toggle">▶</span>
+                </div>
+                <div class="accordion-content">
+                    <div class="accordion-subitem">
+                        <div class="accordion-header" onclick="toggleAccordionContent(this)">
+                            Item Subcategory 3.1
+                            <span class="accordion-toggle">▶</span>
+                        </div>
+                        <div class="accordion-content2">
+                            <div class="item-container">
+                                <a href="#"><p class="item">item 1</p></a>
+                                <div class="number-input-container">
+                                    <button onclick="decrementValue(this)" class="minus-btn text-white">-</button>
+                                    <input type="text" class="number-input" value="0" readonly>
+                                    <button onclick="incrementValue(this)" class="plus-btn">+</button>
+                                </div>
+                                <button class="add-btn">Add</button>
+                            </div>                
+                            <div class="item-container">
+                                <a href="#"><p class="item">item 2</p></a>
+                                <div class="number-input-container">
+                                    <button onclick="decrementValue(this)" class="minus-btn text-white">-</button>
+                                    <input type="text" class="number-input" value="0" readonly>
+                                    <button onclick="incrementValue(this)" class="plus-btn">+</button>
+                                </div>
+                                <button class="add-btn">Add</button>
+                            </div>  
+                            <div class="item-container">
+                                <a href="#"><p class="item">item 3</p></a>
+                                <div class="number-input-container">
+                                    <button onclick="decrementValue(this)" class="minus-btn text-white">-</button>
+                                    <input type="text" class="number-input" value="0" readonly>
+                                    <button onclick="incrementValue(this)" class="plus-btn">+</button>
+                                </div>
+                                <button class="add-btn">Add</button>
+                            </div>  
+                            <div class="item-container">
+                                <a href="#"><p class="item">item 4</p></a>
+                                <div class="number-input-container">
+                                    <button onclick="decrementValue(this)" class="minus-btn text-white">-</button>
+                                    <input type="text" class="number-input" value="0" readonly>
+                                    <button onclick="incrementValue(this)" class="plus-btn">+</button>
+                                </div>
+                                <button class="add-btn">Add</button>
+                            </div>  
+                            <div class="item-container">
+                                <a href="#"><p class="item">item 5</p></a>
+                                <div class="number-input-container">
+                                    <button onclick="decrementValue(this)" class="minus-btn text-white">-</button>
+                                    <input type="text" class="number-input" value="0" readonly>
+                                    <button onclick="incrementValue(this)" class="plus-btn">+</button>
+                                </div>
+                                <button class="add-btn">Add</button>
+                            </div>  
+                            <div class="item-container">
+                                <a href="#"><p class="item">item 6</p></a>
+                                <div class="number-input-container">
+                                    <button onclick="decrementValue(this)" class="minus-btn text-white">-</button>
+                                    <input type="text" class="number-input" value="0" readonly>
+                                    <button onclick="incrementValue(this)" class="plus-btn">+</button>
+                                </div>
+                                <button class="add-btn">Add</button>
+                            </div>  
+                            <div class="item-container">
+                                <a href="#"><p class="item">item 7</p></a>
+                                <div class="number-input-container">
+                                    <button onclick="decrementValue(this)" class="minus-btn text-white">-</button>
+                                    <input type="text" class="number-input" value="0" readonly>
+                                    <button onclick="incrementValue(this)" class="plus-btn">+</button>
+                                </div>
+                                <button class="add-btn">Add</button>
+                            </div>  
+                            <div class="item-container">
+                                <a href="#"><p class="item">item 8</p></a>
+                                <div class="number-input-container">
+                                    <button onclick="decrementValue(this)" class="minus-btn text-white">-</button>
+                                    <input type="text" class="number-input" value="0" readonly>
+                                    <button onclick="incrementValue(this)" class="plus-btn">+</button>
+                                </div>
+                                <button class="add-btn">Add</button>
+                            </div>  
+                            <div class="item-container">
+                                <a href="#"><p class="item">item 9</p></a>
+                                <div class="number-input-container">
+                                    <button onclick="decrementValue(this)" class="minus-btn text-white">-</button>
+                                    <input type="text" class="number-input" value="0" readonly>
+                                    <button onclick="incrementValue(this)" class="plus-btn">+</button>
+                                </div>
+                                <button class="add-btn">Add</button>
+                            </div>  
+                            <div class="item-container">
+                                <a href="#"><p class="item">item 10</p></a>
+                                <div class="number-input-container">
+                                    <button onclick="decrementValue(this)" class="minus-btn text-white">-</button>
+                                    <input type="text" class="number-input" value="0" readonly>
+                                    <button onclick="incrementValue(this)" class="plus-btn">+</button>
+                                </div>
+                                <button class="add-btn">Add</button>
+                            </div>  
+                            <!-- Further nested content if needed -->
+                        </div>
+                    </div>
+                    <div class="accordion-subitem">
+                        <div class="accordion-header" onclick="toggleAccordionContent(this)">
+                            Item Subcategory 3.2
+                        <span class="accordion-toggle">▶</span>
+                        </div>
+                        <div class="accordion-content2">
+                            <div class="item-container">
+                                <a href="#"><p class="item">item 1</p></a>
+                                <div class="number-input-container">
+                                    <button onclick="decrementValue(this)" class="minus-btn text-white">-</button>
+                                    <input type="text" class="number-input" value="0" readonly>
+                                    <button onclick="incrementValue(this)" class="plus-btn">+</button>
+                                </div>
+                                <button class="add-btn">Add</button>
+                            </div>                
+                            <div class="item-container">
+                                <a href="#"><p class="item">item 2</p></a>
+                                <div class="number-input-container">
+                                    <button onclick="decrementValue(this)" class="minus-btn text-white">-</button>
+                                    <input type="text" class="number-input" value="0" readonly>
+                                    <button onclick="incrementValue(this)" class="plus-btn">+</button>
+                                </div>
+                                <button class="add-btn">Add</button>
+                            </div>  
+                            <div class="item-container">
+                                <a href="#"><p class="item">item 3</p></a>
+                                <div class="number-input-container">
+                                    <button onclick="decrementValue(this)" class="minus-btn text-white">-</button>
+                                    <input type="text" class="number-input" value="0" readonly>
+                                    <button onclick="incrementValue(this)" class="plus-btn">+</button>
+                                </div>
+                                <button class="add-btn">Add</button>
+                            </div>  
+                            <div class="item-container">
+                                <a href="#"><p class="item">item 4</p></a>
+                                <div class="number-input-container">
+                                    <button onclick="decrementValue(this)" class="minus-btn text-white">-</button>
+                                    <input type="text" class="number-input" value="0" readonly>
+                                    <button onclick="incrementValue(this)" class="plus-btn">+</button>
+                                </div>
+                                <button class="add-btn">Add</button>
+                            </div>  
+                            <div class="item-container">
+                                <a href="#"><p class="item">item 5</p></a>
+                                <div class="number-input-container">
+                                    <button onclick="decrementValue(this)" class="minus-btn text-white">-</button>
+                                    <input type="text" class="number-input" value="0" readonly>
+                                    <button onclick="incrementValue(this)" class="plus-btn">+</button>
+                                </div>
+                                <button class="add-btn">Add</button>
+                            </div>  
+                            <div class="item-container">
+                                <a href="#"><p class="item">item 6</p></a>
+                                <div class="number-input-container">
+                                    <button onclick="decrementValue(this)" class="minus-btn text-white">-</button>
+                                    <input type="text" class="number-input" value="0" readonly>
+                                    <button onclick="incrementValue(this)" class="plus-btn">+</button>
+                                </div>
+                                <button class="add-btn">Add</button>
+                            </div>  
+                            <div class="item-container">
+                                <a href="#"><p class="item">item 7</p></a>
+                                <div class="number-input-container">
+                                    <button onclick="decrementValue(this)" class="minus-btn text-white">-</button>
+                                    <input type="text" class="number-input" value="0" readonly>
+                                    <button onclick="incrementValue(this)" class="plus-btn">+</button>
+                                </div>
+                                <button class="add-btn">Add</button>
+                            </div>  
+                            <div class="item-container">
+                                <a href="#"><p class="item">item 8</p></a>
+                                <div class="number-input-container">
+                                    <button onclick="decrementValue(this)" class="minus-btn text-white">-</button>
+                                    <input type="text" class="number-input" value="0" readonly>
+                                    <button onclick="incrementValue(this)" class="plus-btn">+</button>
+                                </div>
+                                <button class="add-btn">Add</button>
+                            </div>  
+                            <div class="item-container">
+                                <a href="#"><p class="item">item 9</p></a>
+                                <div class="number-input-container">
+                                    <button onclick="decrementValue(this)" class="minus-btn text-white">-</button>
+                                    <input type="text" class="number-input" value="0" readonly>
+                                    <button onclick="incrementValue(this)" class="plus-btn">+</button>
+                                </div>
+                                <button class="add-btn">Add</button>
+                            </div>  
+                            <div class="item-container">
+                                <a href="#"><p class="item">item 10</p></a>
+                                <div class="number-input-container">
+                                    <button onclick="decrementValue(this)" class="minus-btn text-white">-</button>
+                                    <input type="text" class="number-input" value="0" readonly>
+                                    <button onclick="incrementValue(this)" class="plus-btn">+</button>
+                                </div>
+                                <button class="add-btn">Add</button>
+                            </div>  
+                            <!-- Further nested content if needed -->
+                        </div>
                     </div>
                 </div>
                 <!-- Add more accordion-subitems as needed -->
             </div>
+
+        </div>
+        <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordionContent(this)">
+                Item Category 4
+                <span class="accordion-toggle">▶</span>
+            </div>
+            <div class="accordion-content">
+                <div class="accordion-subitem">
+                    <div class="accordion-header" onclick="toggleAccordionContent(this)">
+                        Item Subcategory 4.1
+                        <span class="accordion-toggle">▶</span>
+                    </div>
+                    <div class="accordion-content2">
+                        <div class="item-container">
+                            <a href="#"><p class="item">item 1</p></a>
+                            <div class="number-input-container">
+                                <button onclick="decrementValue(this)" class="minus-btn text-white">-</button>
+                                <input type="text" class="number-input" value="0" readonly>
+                                <button onclick="incrementValue(this)" class="plus-btn">+</button>
+                            </div>
+                            <button class="add-btn">Add</button>
+                        </div>                
+                        <div class="item-container">
+                            <a href="#"><p class="item">item 2</p></a>
+                            <div class="number-input-container">
+                                <button onclick="decrementValue(this)" class="minus-btn text-white">-</button>
+                                <input type="text" class="number-input" value="0" readonly>
+                                <button onclick="incrementValue(this)" class="plus-btn">+</button>
+                            </div>
+                            <button class="add-btn">Add</button>
+                        </div>  
+                        <div class="item-container">
+                            <a href="#"><p class="item">item 3</p></a>
+                            <div class="number-input-container">
+                                <button onclick="decrementValue(this)" class="minus-btn text-white">-</button>
+                                <input type="text" class="number-input" value="0" readonly>
+                                <button onclick="incrementValue(this)" class="plus-btn">+</button>
+                            </div>
+                            <button class="add-btn">Add</button>
+                        </div>  
+                        <div class="item-container">
+                            <a href="#"><p class="item">item 4</p></a>
+                            <div class="number-input-container">
+                                <button onclick="decrementValue(this)" class="minus-btn text-white">-</button>
+                                <input type="text" class="number-input" value="0" readonly>
+                                <button onclick="incrementValue(this)" class="plus-btn">+</button>
+                            </div>
+                            <button class="add-btn">Add</button>
+                        </div>  
+                        <div class="item-container">
+                            <a href="#"><p class="item">item 5</p></a>
+                            <div class="number-input-container">
+                                <button onclick="decrementValue(this)" class="minus-btn text-white">-</button>
+                                <input type="text" class="number-input" value="0" readonly>
+                                <button onclick="incrementValue(this)" class="plus-btn">+</button>
+                            </div>
+                            <button class="add-btn">Add</button>
+                        </div>  
+                        <div class="item-container">
+                            <a href="#"><p class="item">item 6</p></a>
+                            <div class="number-input-container">
+                                <button onclick="decrementValue(this)" class="minus-btn text-white">-</button>
+                                <input type="text" class="number-input" value="0" readonly>
+                                <button onclick="incrementValue(this)" class="plus-btn">+</button>
+                            </div>
+                            <button class="add-btn">Add</button>
+                        </div>  
+                        <div class="item-container">
+                            <a href="#"><p class="item">item 7</p></a>
+                            <div class="number-input-container">
+                                <button onclick="decrementValue(this)" class="minus-btn text-white">-</button>
+                                <input type="text" class="number-input" value="0" readonly>
+                                <button onclick="incrementValue(this)" class="plus-btn">+</button>
+                            </div>
+                            <button class="add-btn">Add</button>
+                        </div>  
+                        <div class="item-container">
+                            <a href="#"><p class="item">item 8</p></a>
+                            <div class="number-input-container">
+                                <button onclick="decrementValue(this)" class="minus-btn text-white">-</button>
+                                <input type="text" class="number-input" value="0" readonly>
+                                <button onclick="incrementValue(this)" class="plus-btn">+</button>
+                            </div>
+                            <button class="add-btn">Add</button>
+                        </div>  
+                        <div class="item-container">
+                            <a href="#"><p class="item">item 9</p></a>
+                            <div class="number-input-container">
+                                <button onclick="decrementValue(this)" class="minus-btn text-white">-</button>
+                                <input type="text" class="number-input" value="0" readonly>
+                                <button onclick="incrementValue(this)" class="plus-btn">+</button>
+                            </div>
+                            <button class="add-btn">Add</button>
+                        </div>  
+                        <div class="item-container">
+                            <a href="#"><p class="item">item 10</p></a>
+                            <div class="number-input-container">
+                                <button onclick="decrementValue(this)" class="minus-btn text-white">-</button>
+                                <input type="text" class="number-input" value="0" readonly>
+                                <button onclick="incrementValue(this)" class="plus-btn">+</button>
+                            </div>
+                            <button class="add-btn">Add</button>
+                        </div>  
+                        <!-- Further nested content if needed -->
+                    </div>
+                </div>
+                <div class="accordion-subitem">
+                    <div class="accordion-header" onclick="toggleAccordionContent(this)">
+                        Item Subcategory 4.2
+                    <span class="accordion-toggle">▶</span>
+                    </div>
+                    <div class="accordion-content2">
+                        <div class="item-container">
+                            <a href="#"><p class="item">item 1</p></a>
+                            <div class="number-input-container">
+                                <button onclick="decrementValue(this)" class="minus-btn text-white">-</button>
+                                <input type="text" class="number-input" value="0" readonly>
+                                <button onclick="incrementValue(this)" class="plus-btn">+</button>
+                            </div>
+                            <button class="add-btn">Add</button>
+                        </div>                
+                        <div class="item-container">
+                            <a href="#"><p class="item">item 2</p></a>
+                            <div class="number-input-container">
+                                <button onclick="decrementValue(this)" class="minus-btn text-white">-</button>
+                                <input type="text" class="number-input" value="0" readonly>
+                                <button onclick="incrementValue(this)" class="plus-btn">+</button>
+                            </div>
+                            <button class="add-btn">Add</button>
+                        </div>  
+                        <div class="item-container">
+                            <a href="#"><p class="item">item 3</p></a>
+                            <div class="number-input-container">
+                                <button onclick="decrementValue(this)" class="minus-btn text-white">-</button>
+                                <input type="text" class="number-input" value="0" readonly>
+                                <button onclick="incrementValue(this)" class="plus-btn">+</button>
+                            </div>
+                            <button class="add-btn">Add</button>
+                        </div>  
+                        <div class="item-container">
+                            <a href="#"><p class="item">item 4</p></a>
+                            <div class="number-input-container">
+                                <button onclick="decrementValue(this)" class="minus-btn text-white">-</button>
+                                <input type="text" class="number-input" value="0" readonly>
+                                <button onclick="incrementValue(this)" class="plus-btn">+</button>
+                            </div>
+                            <button class="add-btn">Add</button>
+                        </div>  
+                        <div class="item-container">
+                            <a href="#"><p class="item">item 5</p></a>
+                            <div class="number-input-container">
+                                <button onclick="decrementValue(this)" class="minus-btn text-white">-</button>
+                                <input type="text" class="number-input" value="0" readonly>
+                                <button onclick="incrementValue(this)" class="plus-btn">+</button>
+                            </div>
+                            <button class="add-btn">Add</button>
+                        </div>  
+                        <div class="item-container">
+                            <a href="#"><p class="item">item 6</p></a>
+                            <div class="number-input-container">
+                                <button onclick="decrementValue(this)" class="minus-btn text-white">-</button>
+                                <input type="text" class="number-input" value="0" readonly>
+                                <button onclick="incrementValue(this)" class="plus-btn">+</button>
+                            </div>
+                            <button class="add-btn">Add</button>
+                        </div>  
+                        <div class="item-container">
+                            <a href="#"><p class="item">item 7</p></a>
+                            <div class="number-input-container">
+                                <button onclick="decrementValue(this)" class="minus-btn text-white">-</button>
+                                <input type="text" class="number-input" value="0" readonly>
+                                <button onclick="incrementValue(this)" class="plus-btn">+</button>
+                            </div>
+                            <button class="add-btn">Add</button>
+                        </div>  
+                        <div class="item-container">
+                            <a href="#"><p class="item">item 8</p></a>
+                            <div class="number-input-container">
+                                <button onclick="decrementValue(this)" class="minus-btn text-white">-</button>
+                                <input type="text" class="number-input" value="0" readonly>
+                                <button onclick="incrementValue(this)" class="plus-btn">+</button>
+                            </div>
+                            <button class="add-btn">Add</button>
+                        </div>  
+                        <div class="item-container">
+                            <a href="#"><p class="item">item 9</p></a>
+                            <div class="number-input-container">
+                                <button onclick="decrementValue(this)" class="minus-btn text-white">-</button>
+                                <input type="text" class="number-input" value="0" readonly>
+                                <button onclick="incrementValue(this)" class="plus-btn">+</button>
+                            </div>
+                            <button class="add-btn">Add</button>
+                        </div>  
+                        <div class="item-container">
+                            <a href="#"><p class="item">item 10</p></a>
+                            <div class="number-input-container">
+                                <button onclick="decrementValue(this)" class="minus-btn text-white">-</button>
+                                <input type="text" class="number-input" value="0" readonly>
+                                <button onclick="incrementValue(this)" class="plus-btn">+</button>
+                            </div>
+                            <button class="add-btn">Add</button>
+                        </div>  
+                        <!-- Further nested content if needed -->
+                    </div>
+                </div>
+            </div>
+            <!-- Add more accordion-subitems as needed -->
+        </div>
+        <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordionContent(this)">
+                Item Category 5
+                <span class="accordion-toggle">▶</span>
+            </div>
+            <div class="accordion-content">
+                <div class="accordion-subitem">
+                    <div class="accordion-header" onclick="toggleAccordionContent(this)">
+                        Item Subcategory 5.1
+                        <span class="accordion-toggle">▶</span>
+                    </div>
+                    <div class="accordion-content2">
+                        <div class="item-container">
+                            <a href="#"><p class="item">item 1</p></a>
+                            <div class="number-input-container">
+                                <button onclick="decrementValue(this)" class="minus-btn text-white">-</button>
+                                <input type="text" class="number-input" value="0" readonly>
+                                <button onclick="incrementValue(this)" class="plus-btn">+</button>
+                            </div>
+                            <button class="add-btn">Add</button>
+                        </div>                
+                        <div class="item-container">
+                            <a href="#"><p class="item">item 2</p></a>
+                            <div class="number-input-container">
+                                <button onclick="decrementValue(this)" class="minus-btn text-white">-</button>
+                                <input type="text" class="number-input" value="0" readonly>
+                                <button onclick="incrementValue(this)" class="plus-btn">+</button>
+                            </div>
+                            <button class="add-btn">Add</button>
+                        </div>  
+                        <div class="item-container">
+                            <a href="#"><p class="item">item 3</p></a>
+                            <div class="number-input-container">
+                                <button onclick="decrementValue(this)" class="minus-btn text-white">-</button>
+                                <input type="text" class="number-input" value="0" readonly>
+                                <button onclick="incrementValue(this)" class="plus-btn">+</button>
+                            </div>
+                            <button class="add-btn">Add</button>
+                        </div>  
+                        <div class="item-container">
+                            <a href="#"><p class="item">item 4</p></a>
+                            <div class="number-input-container">
+                                <button onclick="decrementValue(this)" class="minus-btn text-white">-</button>
+                                <input type="text" class="number-input" value="0" readonly>
+                                <button onclick="incrementValue(this)" class="plus-btn">+</button>
+                            </div>
+                            <button class="add-btn">Add</button>
+                        </div>  
+                        <div class="item-container">
+                            <a href="#"><p class="item">item 5</p></a>
+                            <div class="number-input-container">
+                                <button onclick="decrementValue(this)" class="minus-btn text-white">-</button>
+                                <input type="text" class="number-input" value="0" readonly>
+                                <button onclick="incrementValue(this)" class="plus-btn">+</button>
+                            </div>
+                            <button class="add-btn">Add</button>
+                        </div>  
+                        <div class="item-container">
+                            <a href="#"><p class="item">item 6</p></a>
+                            <div class="number-input-container">
+                                <button onclick="decrementValue(this)" class="minus-btn text-white">-</button>
+                                <input type="text" class="number-input" value="0" readonly>
+                                <button onclick="incrementValue(this)" class="plus-btn">+</button>
+                            </div>
+                            <button class="add-btn">Add</button>
+                        </div>  
+                        <div class="item-container">
+                            <a href="#"><p class="item">item 7</p></a>
+                            <div class="number-input-container">
+                                <button onclick="decrementValue(this)" class="minus-btn text-white">-</button>
+                                <input type="text" class="number-input" value="0" readonly>
+                                <button onclick="incrementValue(this)" class="plus-btn">+</button>
+                            </div>
+                            <button class="add-btn">Add</button>
+                        </div>  
+                        <div class="item-container">
+                            <a href="#"><p class="item">item 8</p></a>
+                            <div class="number-input-container">
+                                <button onclick="decrementValue(this)" class="minus-btn text-white">-</button>
+                                <input type="text" class="number-input" value="0" readonly>
+                                <button onclick="incrementValue(this)" class="plus-btn">+</button>
+                            </div>
+                            <button class="add-btn">Add</button>
+                        </div>  
+                        <div class="item-container">
+                            <a href="#"><p class="item">item 9</p></a>
+                            <div class="number-input-container">
+                                <button onclick="decrementValue(this)" class="minus-btn text-white">-</button>
+                                <input type="text" class="number-input" value="0" readonly>
+                                <button onclick="incrementValue(this)" class="plus-btn">+</button>
+                            </div>
+                            <button class="add-btn">Add</button>
+                        </div>  
+                        <div class="item-container">
+                            <a href="#"><p class="item">item 10</p></a>
+                            <div class="number-input-container">
+                                <button onclick="decrementValue(this)" class="minus-btn text-white">-</button>
+                                <input type="text" class="number-input" value="0" readonly>
+                                <button onclick="incrementValue(this)" class="plus-btn">+</button>
+                            </div>
+                            <button class="add-btn">Add</button>
+                        </div>  
+                        <!-- Further nested content if needed -->
+                    </div>
+                </div>
+                <div class="accordion-subitem">
+                    <div class="accordion-header" onclick="toggleAccordionContent(this)">
+                        Item Subcategory 5.2
+                    <span class="accordion-toggle">▶</span>
+                    </div>
+                    <div class="accordion-content2">
+                        <div class="item-container">
+                            <a href="#"><p class="item">item 1</p></a>
+                            <div class="number-input-container">
+                                <button onclick="decrementValue(this)" class="minus-btn text-white">-</button>
+                                <input type="text" class="number-input" value="0" readonly>
+                                <button onclick="incrementValue(this)" class="plus-btn">+</button>
+                            </div>
+                            <button class="add-btn">Add</button>
+                        </div>                
+                        <div class="item-container">
+                            <a href="#"><p class="item">item 2</p></a>
+                            <div class="number-input-container">
+                                <button onclick="decrementValue(this)" class="minus-btn text-white">-</button>
+                                <input type="text" class="number-input" value="0" readonly>
+                                <button onclick="incrementValue(this)" class="plus-btn">+</button>
+                            </div>
+                            <button class="add-btn">Add</button>
+                        </div>  
+                        <div class="item-container">
+                            <a href="#"><p class="item">item 3</p></a>
+                            <div class="number-input-container">
+                                <button onclick="decrementValue(this)" class="minus-btn text-white">-</button>
+                                <input type="text" class="number-input" value="0" readonly>
+                                <button onclick="incrementValue(this)" class="plus-btn">+</button>
+                            </div>
+                            <button class="add-btn">Add</button>
+                        </div>  
+                        <div class="item-container">
+                            <a href="#"><p class="item">item 4</p></a>
+                            <div class="number-input-container">
+                                <button onclick="decrementValue(this)" class="minus-btn text-white">-</button>
+                                <input type="text" class="number-input" value="0" readonly>
+                                <button onclick="incrementValue(this)" class="plus-btn">+</button>
+                            </div>
+                            <button class="add-btn">Add</button>
+                        </div>  
+                        <div class="item-container">
+                            <a href="#"><p class="item">item 5</p></a>
+                            <div class="number-input-container">
+                                <button onclick="decrementValue(this)" class="minus-btn text-white">-</button>
+                                <input type="text" class="number-input" value="0" readonly>
+                                <button onclick="incrementValue(this)" class="plus-btn">+</button>
+                            </div>
+                            <button class="add-btn">Add</button>
+                        </div>  
+                        <div class="item-container">
+                            <a href="#"><p class="item">item 6</p></a>
+                            <div class="number-input-container">
+                                <button onclick="decrementValue(this)" class="minus-btn text-white">-</button>
+                                <input type="text" class="number-input" value="0" readonly>
+                                <button onclick="incrementValue(this)" class="plus-btn">+</button>
+                            </div>
+                            <button class="add-btn">Add</button>
+                        </div>  
+                        <div class="item-container">
+                            <a href="#"><p class="item">item 7</p></a>
+                            <div class="number-input-container">
+                                <button onclick="decrementValue(this)" class="minus-btn text-white">-</button>
+                                <input type="text" class="number-input" value="0" readonly>
+                                <button onclick="incrementValue(this)" class="plus-btn">+</button>
+                            </div>
+                            <button class="add-btn">Add</button>
+                        </div>  
+                        <div class="item-container">
+                            <a href="#"><p class="item">item 8</p></a>
+                            <div class="number-input-container">
+                                <button onclick="decrementValue(this)" class="minus-btn text-white">-</button>
+                                <input type="text" class="number-input" value="0" readonly>
+                                <button onclick="incrementValue(this)" class="plus-btn">+</button>
+                            </div>
+                            <button class="add-btn">Add</button>
+                        </div>  
+                        <div class="item-container">
+                            <a href="#"><p class="item">item 9</p></a>
+                            <div class="number-input-container">
+                                <button onclick="decrementValue(this)" class="minus-btn text-white">-</button>
+                                <input type="text" class="number-input" value="0" readonly>
+                                <button onclick="incrementValue(this)" class="plus-btn">+</button>
+                            </div>
+                            <button class="add-btn">Add</button>
+                        </div>  
+                        <div class="item-container">
+                            <a href="#"><p class="item">item 10</p></a>
+                            <div class="number-input-container">
+                                <button onclick="decrementValue(this)" class="minus-btn text-white">-</button>
+                                <input type="text" class="number-input" value="0" readonly>
+                                <button onclick="incrementValue(this)" class="plus-btn">+</button>
+                            </div>
+                            <button class="add-btn">Add</button>
+                        </div>  
+                        <!-- Further nested content if needed -->
+                    </div>
+                </div>
+            </div>
+            <!-- Add more accordion-subitems as needed -->
         </div>
         <!-- Add more accordion-items as needed -->      
     </div>
