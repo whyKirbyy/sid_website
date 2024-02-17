@@ -84,3 +84,109 @@ function toggleAccordionContent(element) {
   }
 }
 
+  // Function to show the cart dropdown
+  function showCartDropdown() {
+    cartDropdown.classList.remove('hidden');
+}
+
+// Function to hide the cart dropdown
+function hideCartDropdown() {
+    cartDropdown.classList.add('hidden');
+}
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const cartButton = document.querySelector('.shopping-cart-btn');
+  const cartDropdown = cartButton.querySelector('.cart-dropdown');
+  const cartItemsList = cartDropdown.querySelector('.cart-items');
+
+
+  // Function to add item to the cart
+  function addToCart(itemName, quantity, numberInput) {
+      if (quantity > 0) {
+          const li = document.createElement('li');
+          li.textContent = `${quantity} x ${itemName}`;
+          cartItemsList.appendChild(li);
+
+          // Clear the number input
+          numberInput.value = '0';
+
+          // Show the cart dropdown
+          showCartDropdown();
+
+          // Update the cart count indicator here if you have one
+          updateCartCount();
+      }
+  }
+
+  // Function to update the cart count
+  function updateCartCount() {
+      const count = cartItemsList.querySelectorAll('li').length;
+      // Update the cart count indicator here if you have one
+  }
+
+  // Attach click event to each add button
+  document.querySelectorAll('.add-btn').forEach(button => {
+      button.addEventListener('click', () => {
+          const itemContainer = button.closest('.item-container');
+          const itemName = itemContainer.querySelector('.item').textContent.trim();
+          const numberInput = itemContainer.querySelector('.number-input');
+          const quantity = parseInt(numberInput.value, 10);
+          addToCart(itemName, quantity, numberInput);
+      });
+  });
+
+  // Event listeners for showing and hiding the cart dropdown
+  cartButton.addEventListener('mouseenter', showCartDropdown);
+  cartButton.addEventListener('mouseleave', hideCartDropdown);
+
+});
+
+
+
+function incrementValue(button) {
+  const input = button.parentNode.querySelector('.number-input');
+  const currentValue = parseInt(input.value, 10);
+  input.value = currentValue + 1;
+}
+
+// Decrement function
+function decrementValue(button) {
+  const input = button.parentNode.querySelector('.number-input');
+  let currentValue = parseInt(input.value, 10);
+  if (currentValue > 0) {
+      input.value = currentValue - 1;
+  }
+}
+
+// Function to add item to the cart
+function addToCart(itemName, quantity, numberInput) {
+  if (quantity > 0) {
+      const li = document.createElement('li');
+      li.textContent = `${quantity} x ${itemName}`;
+      cartItemsList.appendChild(li);
+
+      // Clear the number input
+      numberInput.value = '0';
+
+      // Show the cart dropdown
+      showCartDropdown();
+
+      // Hide the cart dropdown after 5 seconds (5000 milliseconds)
+      setTimeout(hideCartDropdown, 5000);
+
+      // Update the cart count indicator here if you have one
+      updateCartCount();
+  }
+}
+
+const button = document.querySelector('.shopping-button');
+const preview = button.closest('.shopping-preview');
+
+button.addEventListener('mouseover', function() {
+    preview.classList.add('red-border');
+});
+
+button.addEventListener('mouseout', function() {
+    preview.classList.remove('red-border');
+});
