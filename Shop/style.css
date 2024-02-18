@@ -447,3 +447,390 @@ button .shopping-cart:hover path{
 .shopping-preview.red-border {
     border: 2px solid #ff0000;
 }
+
+.product-page{
+    margin-left: 65px;
+    margin-right: 20px;
+}
+
+.breadcrumb{
+    margin-bottom: 10px;
+    background-color: #ffffff;
+    padding-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.breadcrumbs{
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.breadcrumbs:hover{
+    color: #ff0000;
+}
+
+.product-description {
+    height: 550px;
+    display: flex;
+    justify-content: space-between; /* This spreads out the child elements */
+    align-items: center; /* Centers the children vertically */
+    padding: 70px; /* Add padding to all sides */
+    box-sizing: border-box; /* This ensures padding is included in the width */
+    position: relative; /* Ensures absolute positioning is relative to this container */
+}
+
+.product-foto {
+    width: 25%; /* Adjust the width as needed */
+    background-color: #c4c4c4;
+    height: 380px;
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    text-align: center; 
+    /* Removed absolute positioning */
+}
+
+.product-info-tab {
+    width: 45%; /* Adjust the width as needed */
+    background-color: #ffffff;
+    height: 380px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.product-info-tab {
+    width: 45%;
+    right: calc((100% - 25% - 45%)/2); /* Center based on the total width minus child widths */
+    background-color: #ffffff;
+}
+
+.product-info{
+    padding-top: 50px;
+    justify-content: center; 
+    align-items: center; 
+}
+
+.price{
+    font-size: 40px;
+    font-weight: bold;
+    padding-left: 10%;
+    color: #ff0000;
+}
+
+.name{
+    font-size: 30px;
+    font-weight: bold;
+    padding-left: 10%;
+    background-color: #ff0000;
+    color: #ffffff;
+}
+
+.amount{
+    font-size: 25px;
+    margin-bottom: 10%;
+    padding-left: 10%;
+    color: #9b9b9b;
+}
+.button-section {
+    display: flex;
+    justify-content: center; /* Center all items in the row */
+    align-items: center; /* Align items vertically */
+    text-align: center;
+    margin-top: 100px;
+}
+
+.number-input-container2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.number-input-container2 button {
+    padding: 10px; /* Adjust as needed */
+    border: none;
+    background-color: #ff0000;
+    color: #ffffff;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.number-input2 {
+    width: 30px; /* Adjust as needed */
+    margin: 0 10px; /* Space between the buttons and the input */
+    text-align: center;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+.add-cart {
+    padding: 10px 20px; /* Adjust padding to match the height of minus and plus buttons */
+    margin-left: 10px; /* Space between the plus button and add to cart button */
+    background-color: #ff0000;
+    color: #ffffff;
+    font-size: 20px;
+    border-radius: 5px;
+}
+
+.plus-btn2{
+    font-size: 20px;
+}
+
+.minus-btn2{
+    font-size: 20px;
+}
+
+.item-name-and-icon {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* This will push the heart to the right */
+    background-color: #ff0000;
+}
+
+.item-icon {
+    height: 30px; /* You can set the height */
+    margin-right: 5%; /* Adds some space between the icon and the text */
+    stroke: #ffffff;
+}
+
+.item-icon:hover{
+    color: #000000;
+    stroke: #000000;
+}
+
+.add-cart:hover{
+    color: #c4c4c4;
+}
+
+.plus-btn2:hover{
+    color: #c4c4c4;
+}
+
+.minus-btn2:hover{
+    color: #c4c4c4;
+}
+
+.similar-seleciton{
+    margin-bottom: 10px;
+    background-color: #00000000;
+    overflow-x: scroll;
+    display: flex
+}
+
+.product-small{
+    width: 25%;
+    height: 110px;
+    background-color: #ffffff;
+    display: flex;
+    margin-bottom: 10px;
+    align-items: center; /* Align items vertically */
+    text-align: center;
+    margin-right: 10px;
+    flex-shrink: 0;
+}
+
+.foto-small{
+    background-color: #9b9b9b;
+    width: 40%;
+    height: 90px;
+    margin-right: 30px;
+    margin-left: 10px;
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    text-align: center; 
+}
+
+.price-small{
+    color: #ff0000;
+    font-weight: bold;
+}
+
+.name-small{
+    font-weight: bold;
+}
+
+.amount-small{
+    color: #9b9b9b;
+}
+
+.filter-box{
+    background-color: #ffffff;
+    margin-left: 63px;
+}
+
+.filter-selection{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.filter-cat{
+    background-color: #dddddd;
+
+    width: 24%; /* Width for inner boxes */
+    height: 160px; /* Height for inner boxes */
+    flex-shrink: 0;
+    position: relative; /* Needed for absolute positioning of the hover text */
+    overflow-y: auto;
+}
+
+.filter-label {
+    margin-bottom: 10px; /* Space between label and boxes */
+    font-weight: bold;
+    font-size: 18px;
+    padding: 10px;
+}
+
+.checkbox-stuff{
+    font-weight: 300;
+    font-size: 17px;
+}
+
+input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: white;
+    border-radius: 3px;
+    align-items: center;
+
+}
+
+/* Style for hover */
+input[type="checkbox"]:hover {
+    border: 2px solid #ff0000;
+}
+
+/* Style for checked state */
+input[type="checkbox"]:checked {
+    background-color: #ff0000;
+}
+
+/* Adjust the size of the checkbox if needed */
+input[type="checkbox"] {
+    width: 15px; /* or the size you want */
+    height: 15px; /* or the size you want */
+}
+
+
+.slider-container {
+    position: relative;
+  }
+  
+.slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 10px;
+    border-radius: 5px;
+    background: #ff0000; /* This would be replaced by your histogram background */
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+  }
+  
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    border: 2px solid #000000; /* Border color */
+    border-radius: 50%;
+    background: #ffffff; /* Handle color */
+    cursor: pointer;
+  }
+  
+.slider::-moz-range-thumb {
+    width: 24px;
+    height: 24px;
+    border: 2px solid #000000;
+    border-radius: 50%;
+    background: #ffffff;
+    cursor: pointer;
+  }
+  
+  /* Style for labels */
+.slider-labels {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+.label-min, .label-max {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    font-weight: 300;
+    font-size: 17px;
+    margin-top: 5px;
+  }
+  
+#minValue, #maxValue {
+    border: 1px solid #ff0000;
+    text-align: center;
+    border-radius: 3px;
+  }
+
+.items-grid{
+    display: grid;
+    margin-left: 63px;
+    margin-right: 10px;
+    grid-template-columns: repeat(4, 1fr); /* This creates a three-column layout */
+}
+
+.recommended-label{
+    font-size: 24px;
+    font-weight: bold;
+    margin-left: 63px;
+    margin-bottom: 5px;
+}
+
+.product-small2{
+    height: 110px;
+    background-color: #ffffff;
+    display: flex;
+    margin-bottom: 10px;
+    align-items: center; /* Align items vertically */
+    text-align: center;
+    margin-right: 10px;
+    flex-shrink: 0;
+}
+
+.items-box-link:hover .product-small2{
+    border: 2px solid red;
+}
+
+.breadcrumb2{
+    margin-left: 63px;
+    background-color: #ffffff;
+    margin-bottom: 10px;
+    padding-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-right: 25px;
+}
+
+.cat-wraper {
+    background-color: #ffffff;
+    height: 300px;
+    display: flex;
+    align-items: center; /* This will center the .cat-cont vertically */
+    justify-content: center; /* This will center the .cat-cont horizontally */
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.cat-cont {
+    background-color: #9b9b9b;
+    height: 260px;
+    width: 85%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.cat-wraper:hover{
+    border: 2px solid #ff0000;
+}
