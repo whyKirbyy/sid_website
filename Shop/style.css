@@ -834,3 +834,7 @@ input[type="checkbox"] {
 .cat-wraper:hover{
     border: 2px solid #ff0000;
 }
+
+.product-small:hover{
+    border: 2px solid #ff0000;
+}
