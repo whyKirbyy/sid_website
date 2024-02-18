@@ -190,3 +190,39 @@ button.addEventListener('mouseover', function() {
 button.addEventListener('mouseout', function() {
     preview.classList.remove('red-border');
 });
+
+
+function incrementValue2(button) {
+  const input = button.parentNode.querySelector('.number-input2');
+  const currentValue = parseInt(input.value, 10);
+  input.value = currentValue + 1;
+}
+
+// Decrement function
+function decrementValue2(button) {
+  const input = button.parentNode.querySelector('.number-input2');
+  let currentValue = parseInt(input.value, 10);
+  if (currentValue > 0) {
+      input.value = currentValue - 1;
+  }
+}
+
+function addToCart2(itemName, quantity, numberInput) {
+  if (quantity > 0) {
+      const li = document.createElement('li');
+      li.textContent = `${quantity} x ${itemName}`;
+      cartItemsList.appendChild(li);
+
+      // Clear the number input
+      numberInput.value = '0';
+
+      // Show the cart dropdown
+      showCartDropdown();
+
+      // Hide the cart dropdown after 5 seconds (5000 milliseconds)
+      setTimeout(hideCartDropdown, 5000);
+
+      // Update the cart count indicator here if you have one
+      updateCartCount();
+  }
+}
