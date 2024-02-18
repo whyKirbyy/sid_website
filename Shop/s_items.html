@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Politician Profile Dashboard</title>
+  <link rel="stylesheet" href=style.css>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans leading-normal text-gray-900">
+    <!-- Sidebar DIV-->
+    <div class="container mx-auto p-4 flex flex-col">
+      <!-- Sidebar -->
+      <div id="sidebar" class="sidebar">
+        <!-- Hamburger Icon -->
+        <div class="hamburger" onclick="toggleSidebar()">
+          &#9776;
+        </div>
+        <!-- Menu -->
+        <ul class="sidebar-menu">
+          <li><a href="sidebar/profile.html">Profile</a></li>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="sidebar/about.html">About</a></li>
+          <li><a href="sidebar/services.html">Services</a></li>
+          <li><a href="sidebar/contact.html">Contact</a></li>
+          </ul>
+      </div>
+    </div>
+    <!-- Main Content DIV -->
+    <div id="page-container">
+        <!-- Top row stuff -->
+        <div class=" mx-auto sm:px-6 mb-4">
+            <div class="flex items-center mb-4 ml-10">
+                <input type="text" class="rounded-full p-2 focus:outline-none" placeholder="Search items of objects..." style="flex-grow: 2;">
+                <button class="shopping-cart-btn">
+                    <svg class="shopping-cart" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                      <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                      <g id="SVGRepo_iconCarrier">
+                        <g id="Interface / Shopping_Cart_02">
+                          <path id="Vector" d="M3 3H3.26835C3.74213 3 3.97943 3 4.17267 3.08548C4.34304 3.16084 4.48871 3.28218 4.59375 3.43604C4.71269 3.61026 4.75564 3.8429 4.84137 4.30727L7.00004 16L17.4218 16C17.875 16 18.1023 16 18.29 15.9199C18.4559 15.8492 18.5989 15.7346 18.7051 15.5889C18.8252 15.4242 18.8761 15.2037 18.9777 14.7631L18.9785 14.76L20.5477 7.95996L20.5481 7.95854C20.7023 7.29016 20.7796 6.95515 20.6947 6.69238C20.6202 6.46182 20.4635 6.26634 20.2556 6.14192C20.0184 6 19.6758 6 18.9887 6H5.5M18 21C17.4477 21 17 20.5523 17 20C17 19.4477 17.4477 19 18 19C18.5523 19 19 19.4477 19 20C19 20.5523 18.5523 21 18 21ZM8 21C7.44772 21 7 20.5523 7 20C7 19.4477 7.44772 19 8 19C8.55228 19 9 19.4477 9 20C9 20.5523 8.55228 21 8 21Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </g>
+                        </g>
+                    </svg>
+                    <div class="cart-dropdown hidden">
+                        <h3 class="cart-header">Your Cart</h3>
+                        <ul class="cart-items">
+                            <!-- Cart items will be inserted here dynamically -->
+                        </ul>
+                        <a href="#" class="checkout-btn">Checkout</a>
+                    </div>
+                </button>
+                <div class="w-10 h-10 bg-gray-300 rounded-full ml-4"></div>
+            </div>
+        </div>
+        <!-- Filters -->
+        <div class="breadcrumb2 rounded-lg">
+            <a href="s_landing.html" class="breadcrumbs">Home </a> 
+            ▶ 
+            <a href="s_categories.html" class="breadcrumbs"> item categorys </a>
+            ▶
+            <a href="s_sub_cat.html" class="breadcrumbs"> item category 1 </a>
+            ▶
+            <a href="s_items.html" class="breadcrumbs"> item subcategory 1 </a> 
+        </div>
+        <div class="filter-box p-4 mb-6 mr-6 rounded-lg">
+            <div class="mb-2">
+                <p>
+                    Filters
+                </p>
+            </div>
+            <div id="filter-content" class="filter-selection space-x-4">
+                <div class="filter-cat rounded-lg">
+                    <div class="filter-label">
+                        <p>Price</p>
+                        <!-- Slider HTML -->
+                        <div class="slider-container">
+                            <input type="range" min="2" max="42" value="2" class="slider" id="myRange">
+                        </div>
+
+                        <!-- Labels for the slider -->
+                        <div class="slider-labels">
+                            <div class="label-min">
+                                <label for="myRange">Min</label>
+                                <input type="text" id="minValue" value="5 CHF">
+                            </div>
+                            <div class="label-max">
+                                <label for="myRange">Max</label>
+                                <input type="text" id="maxValue" value="130 CHF">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="filter-cat rounded-lg">
+                    <div class="filter-label">
+                        <p>Size</p>
+                        <!-- Slider HTML -->
+                        <div class="slider-container">
+                            <input type="range" min="2" max="42" value="2" class="slider" id="myRange">
+                        </div>
+
+                        <!-- Labels for the slider -->
+                        <div class="slider-labels">
+                            <div class="label-min">
+                                <label for="myRange">Min</label>
+                                <input type="text" id="minValue" value="5 Size">
+                            </div>
+                            <div class="label-max">
+                                <label for="myRange">Max</label>
+                                <input type="text" id="maxValue" value="230+ Size">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="filter-cat rounded-lg">
+                    <div class="filter-label">
+                        <p>Labels</p>
+                        <input type="checkbox" id="easy" class="">
+                        <label for="easy" class="checkbox-stuff "> IP Suisse </label><br>
+                        <input type="checkbox" id="inter" class="">
+                        <label for="inter" class="checkbox-stuff "> Bio Suisse </label><br>
+                        <input type="checkbox" id="adv" class="">
+                        <label for="adv" class="checkbox-stuff "> Terra Natura </label><br>
+                        <input type="checkbox" id="exp" class="">
+                        <label for="exp" class="checkbox-stuff "> Made Up CH </label><br>
+                        <input type="checkbox" id="12" class="">
+                        <label for="12" class="checkbox-stuff "> Not Real Suisse </label><br>
+                        <input type="checkbox" id="11" class="">
+                        <label for="11" class="checkbox-stuff "> Fake Label Helvetica </label><br>
+                    </div>
+                </div>
+                <div class="filter-cat rounded-lg">
+                    <div class="filter-label">
+                        <p>Filteroption</p>
+                        <input type="checkbox" id="ger" class="">
+                        <label for="ger" class="checkbox-stuff "> Filteroption 1 </label><br>
+                        <input type="checkbox" id="fr" class="">
+                        <label for="fr" class="checkbox-stuff "> Filteroption 2 </label><br>
+                        <input type="checkbox" id="it" class="">
+                        <label for="it" class="checkbox-stuff "> Filteroption 3 </label><br>
+                        <input type="checkbox" id="r" class="">
+                        <label for="r" class="checkbox-stuff "> Filteroption 4 </label><br>
+                        <input type="checkbox" id="en" class="">
+                        <label for="en" class="checkbox-stuff "> Filteroption 5 </label><br>
+                        <input type="checkbox" id="sp" class="">
+                        <label for="sp" class="checkbox-stuff "> Filteroption 6 </label><br>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Items -->
+        <div class="recommended-label mb-2">
+            <p>
+                Items:
+            </p>
+        </div>
+        <div class="items-grid">
+            <a href="s_item.html" class="items-box-link">
+                <div class="product-small2 rounded-lg">
+                    <div class="foto-small rounded-lg">item foto</div>
+                    <div>
+                        <p class="price-small">XYZ CHF</p>
+                        <p class="name-small">Item name</p>
+                        <p class="amount-small">480g 1.-/100g</p>
+                    </div>
+                </div>
+            </a>
+            <a href="s_item.html" class="items-box-link">
+                <div class="product-small2 rounded-lg">
+                    <div class="foto-small rounded-lg">item foto</div>
+                    <div>
+                        <p class="price-small">XYZ CHF</p>
+                        <p class="name-small">Item name</p>
+                        <p class="amount-small">480g 1.-/100g</p>
+                    </div>
+                </div>
+            </a>
+            <a href="s_item.html" class="items-box-link">
+                <div class="product-small2 rounded-lg">
+                    <div class="foto-small rounded-lg">item foto</div>
+                    <div>
+                        <p class="price-small">XYZ CHF</p>
+                        <p class="name-small">Item name</p>
+                        <p class="amount-small">480g 1.-/100g</p>
+                    </div>
+                </div>
+            </a>
+            <a href="s_item.html" class="items-box-link">
+                <div class="product-small2 rounded-lg">
+                    <div class="foto-small rounded-lg">item foto</div>
+                    <div>
+                        <p class="price-small">XYZ CHF</p>
+                        <p class="name-small">Item name</p>
+                        <p class="amount-small">480g 1.-/100g</p>
+                    </div>
+                </div>
+            </a>
+            <a href="s_item.html" class="items-box-link">
+                <div class="product-small2 rounded-lg">
+                    <div class="foto-small rounded-lg">item foto</div>
+                    <div>
+                        <p class="price-small">XYZ CHF</p>
+                        <p class="name-small">Item name</p>
+                        <p class="amount-small">480g 1.-/100g</p>
+                    </div>
+                </div>
+            </a>
+            <a href="s_item.html" class="items-box-link">
+                <div class="product-small2 rounded-lg">
+                    <div class="foto-small rounded-lg">item foto</div>
+                    <div>
+                        <p class="price-small">XYZ CHF</p>
+                        <p class="name-small">Item name</p>
+                        <p class="amount-small">480g 1.-/100g</p>
+                    </div>
+                </div>
+            </a>
+            <a href="s_item.html" class="items-box-link">
+                <div class="product-small2 rounded-lg">
+                    <div class="foto-small rounded-lg">item foto</div>
+                    <div>
+                        <p class="price-small">XYZ CHF</p>
+                        <p class="name-small">Item name</p>
+                        <p class="amount-small">480g 1.-/100g</p>
+                    </div>
+                </div>
+            </a>
+            <a href="s_item.html" class="items-box-link">
+                <div class="product-small2 rounded-lg">
+                    <div class="foto-small rounded-lg">item foto</div>
+                    <div>
+                        <p class="price-small">XYZ CHF</p>
+                        <p class="name-small">Item name</p>
+                        <p class="amount-small">480g 1.-/100g</p>
+                    </div>
+                </div>
+            </a>
+            <a href="s_item.html" class="items-box-link">
+                <div class="product-small2 rounded-lg">
+                    <div class="foto-small rounded-lg">item foto</div>
+                    <div>
+                        <p class="price-small">XYZ CHF</p>
+                        <p class="name-small">Item name</p>
+                        <p class="amount-small">480g 1.-/100g</p>
+                    </div>
+                </div>
+            </a>         
+            <a href="s_item.html" class="items-box-link">
+                <div class="product-small2 rounded-lg">
+                    <div class="foto-small rounded-lg">item foto</div>
+                    <div>
+                        <p class="price-small">XYZ CHF</p>
+                        <p class="name-small">Item name</p>
+                        <p class="amount-small">480g 1.-/100g</p>
+                    </div>
+                </div>
+            </a>
+            <a href="s_item.html" class="items-box-link">
+                <div class="product-small2 rounded-lg">
+                    <div class="foto-small rounded-lg">item foto</div>
+                    <div>
+                        <p class="price-small">XYZ CHF</p>
+                        <p class="name-small">Item name</p>
+                        <p class="amount-small">480g 1.-/100g</p>
+                    </div>
+                </div>
+            </a>
+            <a href="s_item.html" class="items-box-link">
+                <div class="product-small2 rounded-lg">
+                    <div class="foto-small rounded-lg">item foto</div>
+                    <div>
+                        <p class="price-small">XYZ CHF</p>
+                        <p class="name-small">Item name</p>
+                        <p class="amount-small">480g 1.-/100g</p>
+                    </div>
+                </div>
+            </a>
+            <a href="s_item.html" class="items-box-link">
+                <div class="product-small2 rounded-lg">
+                    <div class="foto-small rounded-lg">item foto</div>
+                    <div>
+                        <p class="price-small">XYZ CHF</p>
+                        <p class="name-small">Item name</p>
+                        <p class="amount-small">480g 1.-/100g</p>
+                    </div>
+                </div>
+            </a>         
+            <a href="s_item.html" class="items-box-link">
+                <div class="product-small2 rounded-lg">
+                    <div class="foto-small rounded-lg">item foto</div>
+                    <div>
+                        <p class="price-small">XYZ CHF</p>
+                        <p class="name-small">Item name</p>
+                        <p class="amount-small">480g 1.-/100g</p>
+                    </div>
+                </div>
+            </a>
+            <a href="s_item.html" class="items-box-link">
+                <div class="product-small2 rounded-lg">
+                    <div class="foto-small rounded-lg">item foto</div>
+                    <div>
+                        <p class="price-small">XYZ CHF</p>
+                        <p class="name-small">Item name</p>
+                        <p class="amount-small">480g 1.-/100g</p>
+                    </div>
+                </div>
+            </a>
+            <a href="s_item.html" class="items-box-link">
+                <div class="product-small2 rounded-lg">
+                    <div class="foto-small rounded-lg">item foto</div>
+                    <div>
+                        <p class="price-small">XYZ CHF</p>
+                        <p class="name-small">Item name</p>
+                        <p class="amount-small">480g 1.-/100g</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="button-container text-center my-4">
+            <button class="bg-red-500 text-white font-bold py-2 px-4 rounded hover:text-gray-300">
+                Show more
+            </button>
+        </div>
+    </div>
+  <script src=script.js></script>
+  </body>
+  </html>
