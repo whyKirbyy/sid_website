@@ -352,11 +352,7 @@ h3 {
 .white-box-overlay p {
   font-size: 1.5em; /* Adjust the size as needed */
   font-weight: bold; /* Makes the text bold */
-  color: black; /* Adjust the color as needed for visibility */
-}
-
-.white-box-overlay p:hover {
-  color: #ff0000;
+  color: #ff0000; /* Adjust the color as needed for visibility */
 }
 
 .white-box-overlay h4 {
