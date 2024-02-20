@@ -1,0 +1,381 @@
+.card-height-adjusted {
+    height: 320px; 
+}
+
+.card-height-adjusted-personal {
+    min-height: 720px; 
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+.w14 {
+    width: 25%;
+}
+
+.sticky {
+    position: sticky;
+    top: 0;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    height: 100%;
+    width: 50px; /* Width of the collapsed sidebar */
+    position: fixed;
+    z-index: 2; /* Ensure sidebar is above the dimmed content */
+    top: 0;
+    left: 0;
+    background-color: red; /* Set the background color for the sidebar */
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: width ease, background-color ease; /* Combine transition properties */
+}
+  /* Sidebar menu styles */
+  
+.sidebar-menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+  
+.sidebar-menu li a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #ffffff;
+    display: block;
+    transition: 0.3s;
+    display: none; /* Hide text by default */
+    z-index: 2; /* Above the dimmed body */
+}
+  
+.sidebar-menu li a:hover {
+    color: #c4c4c4;
+}
+
+.sidebar.sidebar-expanded .sidebar-menu li a {
+    display: block; /* Show text when sidebar is expanded */
+}
+
+body.sidebar-expanded::before {
+    content: "";
+    position: fixed; /* Fixed position */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Dimming effect */
+    z-index: 2; /* Below the sidebar, above the content */
+    pointer-events: none; /* Allows clicks to pass through */
+}
+  
+  /* Hamburger Icon */
+.hamburger {
+    position: absolute;
+    left: 50%;
+    top: 16px; /* Adjust as necessary to position from the top */
+    transform: translateX(-50%); /* Center the element in the middle of the sidebar */
+    cursor: pointer;
+    color: #fff; /* Change the color if you want */
+    font-size: 30px;
+    z-index: 4; /* Above the dimmed body and sidebar */
+    z-index: 5; /* Ensure it's above everything else */
+    transition: top 0.5s; /* Animate the change in position */
+}
+  
+/* Adjust position when sidebar is expanded */
+.sidebar.sidebar-expanded .hamburger {
+    top: 16px; 
+    left: 17%;
+}
+
+  /* Page content */
+#main-content {
+    transition: margin-left 0.5s, background-color 0.5s; /* Add background-color transition */
+}
+  
+  /* When the sidebar is expanded, add a margin to the page content */
+#main-content.sidebar-expanded {
+    margin-left: 200px;
+}
+
+.sidebar.sidebar-expanded { /* Make sure this is as specific as the .sidebar selector */
+    width: 250px;
+    background-color: red; /* Keep the background color red for consistency */
+    z-index: 3; /* Above the dimmed body */
+}
+
+.sidebar-expanded .sidebar-menu li a {
+    display: block;
+}
+
+#page-container {
+    transition: background-color 0.5s, pointer-events 0.5s; /* Smooth transition for background color and pointer-events */
+}
+
+.sidebar .logo_name,
+.sidebar .nav-list .links_name {
+  display: none;
+}
+
+.sidebar.open .logo_name,
+.sidebar.open .nav-list .links_name {
+  display: block;
+}
+
+.header-group {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+    margin-left: 60px;
+}
+
+.logo-header {
+    align-items: center;
+    text-align: center;
+    margin-top: 20px;
+    flex-grow: 1;
+}
+
+.top-interaction {
+    display: flex;
+    justify-content: flex-end; 
+    margin-right: 10px;
+    margin-top: 1.5%;
+}
+
+.logo {
+    font-size: 45px;
+    font-weight: bold;
+    margin-left: 105px;
+}
+ 
+.login{
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.search-icon-svg {
+    height: 26px; /* Adjust the size as needed */
+    width: 24px;  /* Adjust the size as needed */
+    margin-right: 10px;
+    fill: currentColor;
+}
+
+.account-icon-svg{
+    height: 20px; /* Adjust the size as needed */
+    width: 24px;  /* Adjust the size as needed */
+    font-weight: bold;
+    margin-top: 2px;
+    fill: #000000;
+}
+
+.search-icon-svg:hover{
+    fill: #ff0000;
+    stroke: #ff0000;
+}
+
+.account-icon-svg:hover path{
+    fill: #ff0000;
+}
+
+.menu-container {
+    white-space: nowrap;
+    padding-left: 60px;
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+  
+.menu {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    display: flex;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #ccc; /* Light underline for all items */
+}
+  
+.menu-item {
+    margin-right: 20px; /* Spacing between items */
+    position: relative; /* For positioning the pseudo-element */
+}
+  
+.menu-item a {
+    text-decoration: none;
+    color: black;
+    padding: 5px;
+    display: block;
+}
+  
+.menu-item::after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: -2px; /* Align with the bottom border */
+    width: 100%;
+    border-bottom: 2px solid transparent; /* Transparent underline */
+    transition: border-color 0.3s; /* Smooth transition for hover effect */
+}
+  
+.menu-item:hover::after,
+.menu-item.active::after {
+    border-bottom-color: #888; /* Darker underline on hover */
+}
+  
+.menu-item.active::after {
+    border-bottom-color: #000; /* Darkest underline for active item */
+}
+
+.search-container {
+    display: none; /* Hidden by default */
+    position: absolute; /* Position it on top of the header */
+    left: 60px; /* Match the width of the sidebar plus 10px margin */
+    right: 0; /* Extend to the right edge of the header group */
+    top: 0; /* Align to the top of the header group */
+    z-index: 10; /* Ensure it's above other content */
+    padding: 0 10px; /* Add padding on the sides */
+}
+
+  /* Styles for the search input field */
+.search-input {
+    width: calc(100% - 20px); /* Full width minus padding */
+    padding: 10px; /* Add some padding inside the search input */
+    border-radius: 25px; /* Fully rounded sides */
+    font-size: 16px; /* Font size for the input text */
+    box-sizing: border-box; /* Include padding and border in the element's width */
+    margin-top: 2%;
+}
+  
+.search-input:focus {
+    outline: none; /* Remove the blue outline */
+    border-color: #cccccc00; /* Optional: change border color on focus */
+}
+
+  /* Ensure the logo and interaction remain aligned */
+.logo-header, .top-interaction {
+    z-index: 5; /* Lower than the search container */
+}
+
+.row-container{
+    margin-left: 60px;
+    margin-right: 10px;
+    border-bottom: 1px solid #ccc;
+    height: 500px;
+    width: 95%;
+    align-items: center;
+    justify-items: center;
+    display: flex;
+}
+
+.bigger-part{
+    border-right: 1px solid #ccc;
+    height: 480px;
+    width: 65%;
+    align-items: center;
+    justify-items: center;
+}
+
+.smaller-part{
+    height: 480px;
+    width: 35%;
+    justify-content: flex-end; 
+    margin-left: 17px;
+    align-items: center;
+    justify-items: center;
+}
+
+.bigger-part2{
+    width: 65%;
+    height: 480px;
+    justify-content: flex-end; 
+    align-items: center;
+    justify-items: center;
+    margin-left: 17px;
+}
+
+.smaller-part2{
+    border-right: 1px solid #ccc;
+    height: 480px;
+    width: 35%;
+    align-items: center;
+    justify-items: center;
+    padding-right: 8px;
+}
+
+.fake-image-big{
+    width: 98%;
+    height: 370px;
+    background-color: #c4c4c4;
+    margin-bottom: 10px;
+    text-align: center;
+    display: flexbox;
+}
+
+.fake-image-small{
+    width: 98%;
+    height: 340px;
+    background-color: #c4c4c4;
+    margin-bottom: 10px;
+    display: flexbox;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.topic-heading{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.topic-link:hover{
+    color: #ff0000;
+}
+
+.breadcrumbs{
+    margin-top: 1.5%;
+}
+
+.breadcrumb:hover{
+    color: #ff0000;
+}
+
+.logo2 {
+    font-size: 45px;
+    font-weight: bold;
+}
+
+.article{
+    align-items: center;
+    text-align: center;
+    margin-left: 200px;
+    margin-right: 150px;
+    margin-top: 50px;
+}
+
+.article-heading{
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.short-intro-text{
+    font-size: 22px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.text-sizer{
+    font-size: 20px;
+    font-weight: bold;
+}
+  
