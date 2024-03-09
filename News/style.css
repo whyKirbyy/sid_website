@@ -406,7 +406,6 @@ body.sidebar-expanded::before {
     height: 5px;
     background-color: #ff0000;
     width: 0%;
-    transition: width 0.2s ease;
 }
 
 #scrollToTopBtn {
