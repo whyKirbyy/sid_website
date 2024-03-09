@@ -165,16 +165,20 @@ body.sidebar-expanded::before {
     margin-left: 10px;
 }
 
+.login:hover{
+    color: #ff0000;
+}
+
 .search-icon-svg {
-    height: 26px; /* Adjust the size as needed */
-    width: 24px;  /* Adjust the size as needed */
+    height: 26px;
+    width: 24px; 
     margin-right: 10px;
     fill: currentColor;
 }
 
 .account-icon-svg{
-    height: 20px; /* Adjust the size as needed */
-    width: 24px;  /* Adjust the size as needed */
+    height: 20px; 
+    width: 24px; 
     font-weight: bold;
     margin-top: 2px;
     fill: #000000;
@@ -188,6 +192,7 @@ body.sidebar-expanded::before {
 .account-icon-svg:hover path{
     fill: #ff0000;
 }
+
 
 .menu-container {
     white-space: nowrap;
