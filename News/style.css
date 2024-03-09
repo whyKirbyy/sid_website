@@ -501,7 +501,7 @@ html::-webkit-scrollbar {
 .inter-svg3 {
     height: 24px;
     width: 24px;
-    cursor: pointer; /* Changes cursor to pointer on hover */
+    cursor: pointer; 
 }
 
 .inter-svg3:hover path{
